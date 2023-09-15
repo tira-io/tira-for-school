@@ -1,0 +1,5 @@
+# docker build -t webis/tira:vuetify-dev-0.0.1 -f Dockerfile.dev .
+FROM node
+
+RUN yarn create vuetify
+
