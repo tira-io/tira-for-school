@@ -24,3 +24,35 @@ const router = createRouter({
 })
 
 export default router
+
+/*
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
+
+const routes = [
+    {
+      path: '/',
+      name: 'Home',
+      component: () => import('./views/Home.vue')
+    },
+    {
+      path: '/HelloWorld',
+      name: 'HelloWorld',
+      component: () => import('./components/HelloWorld.vue')
+    },
+    {
+      path: '/Test_1',
+      name: 'Test_1',
+      component: () => import('./components/Test_1.vue')
+    }
+  ];
+
+const router = new VueRouter({
+  routes,
+  mode: 'history' // This removes the '#' from URLs
+});
+
+export default router;
+*/
