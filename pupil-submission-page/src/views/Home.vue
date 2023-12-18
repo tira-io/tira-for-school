@@ -1,3 +1,7 @@
+ <!--
+<script lang="ts" setup>
+  import HelloWorld from '@/components/HelloWorld.vue'
+</script>
 
 
 <template>
@@ -8,7 +12,7 @@
     <v-btn @click="goToPage1">Go to Page 1</v-btn>
     <v-btn @click="goToPage2">Go to Page 2</v-btn>
   </div>
--->
+
 </template>
   
 <!--
@@ -27,6 +31,4 @@ const goToPage2 = () => {
 </script>
 -->
 
-<script lang="ts" setup>
-  import HelloWorld from '@/components/HelloWorld.vue'
-</script>
+

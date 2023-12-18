@@ -11,6 +11,16 @@
     new_component
   }
 }
+
+
+export default {
+  name: 'App',
+  components: {
+    new_component
+    //HelloWorld
+  }
+
+}
 </script>
 
 <style>
@@ -25,24 +35,18 @@
 </style>
 -->
 
+<script lang="ts" setup>
+import new_component from "./components/new_component.vue"
+import HelloWorld from "./components/HelloWorld.vue"
+
+</script>
+
 <template>
   <new_component/>
   <HelloWorld/>
 </template>
 
-<script>
-import new_component from "./components/new_component.vue"
-import HelloWorld from "./components/HelloWorld.vue"
 
-export default {
-  name: 'App',
-  components: {
-    new_component
-    //HelloWorld
-  }
-
-}
-</script>
 
 <style>
 #app {

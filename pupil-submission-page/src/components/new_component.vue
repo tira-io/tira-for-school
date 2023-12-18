@@ -1,12 +1,14 @@
 <template lang="">
     <div>
 
-        <hl>This is my new Compnent</hl>
-    
+        <hl>This is my new Comopnent</hl>
+    </div>
+    <div>
         <v-btn @click = 'increaseCount'> Add 1</v-btn>
         <p>count is: {{count}} </p>
     </div>
 </template>
+
 <script>
 export default {
     name: "new_component",
