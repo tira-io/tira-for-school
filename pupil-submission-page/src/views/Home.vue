@@ -7,7 +7,6 @@
 <template>
   
   <HelloWorld />
-  <!--
   <div>
     <v-btn @click="goToPage1">Go to Page 1</v-btn>
     <v-btn @click="goToPage2">Go to Page 2</v-btn>
@@ -15,7 +14,7 @@
 
 </template>
   
-<!--
+
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 
