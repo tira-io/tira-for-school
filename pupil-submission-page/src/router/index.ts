@@ -1,55 +1,15 @@
-// Composables
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
-const routes = [
-  {
-    path: '/',
-    component: () => import('@/layouts/default/Default.vue'),
-    children: [
-      {
-        path: '',
-        name: 'Home',
-        component: () => import('@/views/Home.vue'),
-      },
-    ],
-  },
-]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
-})
-
-export default router
-
-/*
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-
-Vue.use(VueRouter);
-
-const routes = [
+  history: createWebHistory(),
+  routes: [
     {
-      path: '/',
-      name: 'Home',
-      component: () => import('./views/Home.vue')
+      path: "/",
+      name: "StudentPage",
+      component: () => import("../views/StudentPageView.vue"),
     },
-    {
-      path: '/HelloWorld',
-      name: 'HelloWorld',
-      component: () => import('./components/HelloWorld.vue')
-    },
-    {
-      path: '/Test_1',
-      name: 'Test_1',
-      component: () => import('./components/Test_1.vue')
-    }
-  ];
-
-const router = new VueRouter({
-  routes,
-  mode: 'history' // This removes the '#' from URLs
+  ],
 });
 
 export default router;
-*/
