@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import new_component from "./components/new_component.vue"
-import HelloWorld from "./components/HelloWorld.vue"
+import new_component from "@/components/new_component.vue"
+import HelloWorld from "@/components/HelloWorld.vue"
 
 </script>
 
