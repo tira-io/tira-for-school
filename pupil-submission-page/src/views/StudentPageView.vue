@@ -2,7 +2,6 @@
 // import HelloWorld from "@/components/HelloWorld.vue"
 
 import StudentPage from "@/components/MainStudentPage.vue"
-import File from "@/components/UploadFile.vue"
 
 </script>
 
@@ -10,7 +9,6 @@ import File from "@/components/UploadFile.vue"
     <v-app>
         <v-main>
             <StudentPage />
-            <File />
         </v-main>
     </v-app>
 </template>
