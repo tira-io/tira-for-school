@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-    import File from "./UploadFile.vue"
+import File from "./UploadFile.vue"
+
+//import pdf from '@/assets/StudentAufgabe.pdf'
 </script>
 
 
