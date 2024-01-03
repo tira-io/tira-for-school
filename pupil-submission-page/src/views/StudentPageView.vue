@@ -2,12 +2,14 @@
 // import HelloWorld from "@/components/HelloWorld.vue"
 
 import StudentPage from "@/components/MainStudentPage.vue"
+import Header from "@/components/Header.vue";
 
 </script>
 
 <template>
     <v-app>
         <v-main>
+            <Header />
             <StudentPage />
         </v-main>
     </v-app>
