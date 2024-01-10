@@ -1,3 +1,5 @@
+<!-- eslint-disable vue/valid-v-slot -->
+
 <script lang="ts" setup>
 import File from "./UploadFile.vue"
 
@@ -6,15 +8,12 @@ import File from "./UploadFile.vue"
 
 
 <template>
-    <v-row>
-        <v-col cols="12">
-            <v-row>
-                <v-col cols="12">
+    <v-container>
+        <v-stepper :items="['Willkommen', 'Aufgabe', 'Hochladen']">
+            <template v-slot:item.1>
+                <v-card title="Willkommen!" flat>
                     <v-card>
-                        <p class="font-weight-black">
-                            Willkommen!
-                        </p>
-                        <p class="font-weight-medium">
+                        <p>
                             Auf dieser Webseite lernst du, wie man Daten für eine KI sammelt und diese selbst trainieren
                             kann.
                         </p>
@@ -23,30 +22,31 @@ import File from "./UploadFile.vue"
                             welche herunter.
                         </p>
                     </v-card>
-                </v-col>
-            </v-row>
-            <v-row>
-                <!-- Zeile zwei -->
-                <v-col cols="12" md="6">
-                    <v-card class="flex-grow-1">
-                        <v-card-title>Übersicht Aufgaben</v-card-title>
+                </v-card>
+            </template>
+
+            <template v-slot:item.2>
+                <v-card title="Übersicht Aufgaben" flat>
+                    <v-card>
                         <v-card-text>
                             Dein Auftrag, für den Fall, dass du ihn annehmen willst:
                         </v-card-text>
                     </v-card>
-                </v-col>
-                <v-col cols="12" md="6">
-                    <v-card class="flex-grow-1">
-                        <v-card-title>Lade hier deine KI hoch</v-card-title>
+                </v-card>
+            </template>
+
+            <template v-slot:item.3>
+                <v-card title="Lade hier deine KI hoch" flat>
+                    <v-card>
                         <v-card-text>
                             hochladen - dafür musst du es erst herunterladen und abspeichern.
                         </v-card-text>
                         <File />
                     </v-card>
-                </v-col>
-            </v-row>
-        </v-col>
-    </v-row>
+                </v-card>
+            </template>
+        </v-stepper>
+    </v-container>
 </template> 
 
 
