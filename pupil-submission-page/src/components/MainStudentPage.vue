@@ -14,10 +14,6 @@ import File from "./UploadFile.vue"
                             Auf dieser Webseite lernst du, wie man Daten für eine KI sammelt und diese selbst trainieren
                             kann.
                         </p>
-                        <p>
-                            Die Bilder solltest du als Hausaufgabe bereits gesammelt haben oder du lädst dir jetzt schnell
-                            welche herunter.
-                        </p>
                     </v-card>
                 </v-card>
             </template>
@@ -119,7 +115,8 @@ import File from "./UploadFile.vue"
 
             <template v-slot:item.6>
                 <v-card title="Lade hier deine KI hoch" flat>
-                    <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="2.75">
+                    <v-container class="ml-4 mr-4">
+                        <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">
                             <template v-slot:placeholder>
                                 <v-row class="fill-height ma-0" align="center" justify="center">
                                     <v-progress-circular indeterminate color="white"></v-progress-circular>
@@ -127,19 +124,21 @@ import File from "./UploadFile.vue"
                             </template>
                         </v-img>
                         <p> <br> </p>
-                    <ul>
-                        <li class="text-left">Stelle außerdem sicher, dass du dein Model im richtigen Format exportierst.
-                        </li>
-                        <li class="text-left">Dafür musst du auf „Modell exportieren“ klicken und dann auf „Tensorflow“. Die
-                            Zipdatei lädst du herunter und im nächsten Schritt dann hier hoch.
-                        </li>
+                        <ul>
+                            <li class="text-left">Stelle außerdem sicher, dass du dein Model im richtigen Format
+                                exportierst.
+                            </li>
+                            <li class="text-left">Dafür musst du auf „Modell exportieren“ klicken und dann auf „Tensorflow“.
+                                Die Zipdatei lädst du herunter und im nächsten Schritt dann hier hoch.
+                            </li>
+                        </ul>
 
-                    </ul>
-                    
-                    <File />
+                        <File />
 
+                    </v-container>
                 </v-card>
             </template>
+
         </v-stepper>
     </v-container>
 </template> 
