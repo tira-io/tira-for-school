@@ -43,17 +43,17 @@ import File from "./UploadFile.vue"
                 <v-card title="Teachable Machine" flat>
                     <v-container class="ml-4 mr-4">
                         <ol>
-                            <li class="text-left">Bereite alles vor. Habe also alle Bilder eures Teams in zwei Ordnern auf
-                                deine Computer abgespeichert.</li>
+                            <li class="text-left">Bereite alles vor. Alle Bilder eures Teams sollten in zwei Ordnern auf
+                                deinem Computer abgespeichert sein.</li>
                             <li class="text-left">Öffne die Webseite <a href="https://teachablemachine.withgoogle.com"
                                     target="_blank">https://teachablemachine.withgoogle.com</a></li>
                             <li class="text-left">Klicke auf „Erste Schritte“</li>
-                            <li class="text-left">Wenn du dein Projekt gerade beginnst, dann Klicke auf Bildprojekt, um ein
-                                neues zu erstellen. Ansonsten öffne ein bestehendes Projekt aus einer Datei. (Wir erstellen
-                                ein Modell mit Standardbildern.)</li>
-                            <li class="text-left">Wegen des Datenschutzes erlaube der Webseite nicht auf deine Webcam
-                                zuzugreifen und lade nur Bilder hoch, welche du selbst erstellt hast oder welche eine
-                                entsprechende Lizenz haben.</li>
+                            <li class="text-left">Wenn du dein Projekt gerade beginnst, dann klicke auf Bildprojekt, um ein
+                                neues Projekt zu erstellen. Ansonsten öffne ein bestehendes Projekt aus einer Datei. (Wir
+                                erstellen ein Modell mit Standardbildern.)</li>
+                            <li class="text-left">Erlaube der Webseite nicht auf deine Webcam zuzugreifen und lade nur
+                                Bilder hoch, welche du selbst erstellt hast oder welche eine entsprechende Lizenz haben.
+                                (Datenschutz)</li>
                         </ol>
                     </v-container>
                 </v-card>
@@ -71,15 +71,15 @@ import File from "./UploadFile.vue"
                         </v-img>
                         <p> <br> </p>
                         <ul>
-                            <li class="text-left">Wir sehen hier die Grundstruktur, wie das Erstellen einer KI fürs
-                                Klassifizieren aussieht.</li>
-                            <li class="text-left">Als erstes muss man sich entscheiden, welche Klassen man gegeben hat.
-                                Inndiese Klasse lädt man dann entsprechende Daten ein. Man spricht von „gelabelten Daten“,
-                                also vorher bekannte Daten, welche uns für das Training helfen.</li>
-                            <li class="text-left">Wenn die Klassen mit den Daten gefüllt sind, dann kann man das Modell
+                            <li class="text-left">Nun siehst du die Grundstruktur, wie das Trainieren einer KI für
+                                Klassifikationsprobleme aussieht.</li>
+                            <li class="text-left">Als erstes muss man sich entscheiden, welche Klassen man gegeben hat. In
+                                diese Klassen lädt man dann entsprechende Daten ein. Man spricht von „gelabelten Daten“,
+                                also vorher bekannten Daten, welche für das Training verwendet werden.</li>
+                            <li class="text-left">Wenn die Klassen mit den Daten gefüllt sind, kann man das Modell
                                 trainieren. Ein Algorithmus (in dem Fall von Teachable Machine ein künstliches neuronales
-                                Netz) versucht aus den vom EntwicklerInnen Team gegebenen Daten Zusammenhänge und Muster zu
-                                erstellen, welche später helfen sollen auch unbekannte Bilder zu Klassifizieren.</li>
+                                Netz) versucht, aus den vom EntwicklerInnen-Team gegebenen Daten Zusammenhänge und Muster zu
+                                erstellen, welche später auch unbekannte Bilder klassifizieren sollen.</li>
                         </ul>
                     </v-container>
                 </v-card>
@@ -97,17 +97,16 @@ import File from "./UploadFile.vue"
                         </v-img>
                         <p> <br> </p>
                         <ul>
-                            <li class="text-left">Zum Schluss müssen die EntwicklerInnen natürlich das Modell auch noch
-                                überprüfen. Hat es funktioniert – kann die KI die zwei Klassen jetzt zuverlässig
-                                unterscheiden?</li>
-                            <li class="text-left">Dafür kannst du wieder Bilder hochladen, welche das Modell jetzt auf die
+                            <li class="text-left">Zum Schluss müssen die EntwicklerInnen das Modell natürlich noch
+                                überprüfen. Hat es funktioniert? – Kann die KI die Klassen jetzt zuverlässig unterscheiden?
+                            </li>
+                            <li class="text-left">Dafür kannst du weitere Bilder hochladen, welche das Modell jetzt auf die
                                 Probe stellen – hält das Auto an und gewährt Vorfahrt, oder kommt es zu einem Unfall, weil
                                 sich die KI nicht 100% sicher war?</li>
-                            <li class="text-left">Gehe dafür auf Datei und lade weitere Bilder, welche als Testzwecke
+                            <li class="text-left">Gehe dafür auf Datei und lade weitere Bilder, welche zu Testzwecken
                                 dienen, hoch.</li>
-                            <li class="text-left">Spielt ein wenig mit den Einstellungen unter „erweitert“ herum – was fällt
-                                euch auf? Könnt ihr euer Modell verbessern?</li>
-
+                            <li class="text-left">Spiele ein wenig mit den Einstellungen unter „erweitert“ herum – was fällt
+                                auf? Kann das Modell verbessert werden?</li>
                         </ul>
                     </v-container>
                 </v-card>
@@ -126,11 +125,9 @@ import File from "./UploadFile.vue"
                         <p> <br> </p>
                         <ul>
                             <li class="text-left">Stelle außerdem sicher, dass du dein Model im richtigen Format
-                                exportierst.
-                            </li>
+                                exportierst.</li>
                             <li class="text-left">Dafür musst du auf „Modell exportieren“ klicken und dann auf „Tensorflow“.
-                                Die Zipdatei lädst du herunter und im nächsten Schritt dann hier hoch.
-                            </li>
+                                Die Zipdatei lädst du herunter und im nächsten Schritt dann hier hoch.</li>
                         </ul>
 
                         <File />
