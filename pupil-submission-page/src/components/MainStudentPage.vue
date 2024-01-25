@@ -6,20 +6,9 @@ import File from "./UploadFile.vue"
 <!-- eslint-disable vue/valid-v-slot -->
 <template>
     <v-container>
-        <v-stepper :items="['Willkommen', 'Übersicht', 'Bilder', 'KI entwickeln', 'KI testen', 'KI hochladen']">
+        <v-stepper :items="['Deine Aufgabe', 'Datensatz', 'KI trainieren', 'KI testen', 'KI hochladen']">
             <template v-slot:item.1>
-                <v-card title="Willkommen!" flat>
-                    <v-card>
-                        <p>
-                            Auf dieser Webseite lernst du, wie man Daten für eine KI sammelt und diese selbst trainieren
-                            kann.
-                        </p>
-                    </v-card>
-                </v-card>
-            </template>
-
-            <template v-slot:item.2>
-                <v-card title="Übersicht aller Aufgaben" flat>
+                <v-card title="Deine Aufgaben" flat>
                     <a href="#" @click.prevent="downloadMyPdf">
                         <v-img src="@/assets/Aufgabe.png" aspect-ratio="2.75">
                             <template v-slot:placeholder>
@@ -33,13 +22,12 @@ import File from "./UploadFile.vue"
                         <v-card-text>
                             Dein Auftrag, für den Fall, dass du ihn annehmen willst:
                         </v-card-text>
-                        <!-- Optionally, you can keep the button for better accessibility -->
                         <v-btn @click="downloadMyPdf" color="blue"> Download PDF </v-btn>
                     </v-card>
                 </v-card>
             </template>
 
-            <template v-slot:item.3>
+            <template v-slot:item.2>
                 <v-card title="Teachable Machine" flat>
                     <v-container class="ml-4 mr-4">
                         <ol>
@@ -59,8 +47,8 @@ import File from "./UploadFile.vue"
                 </v-card>
             </template>
 
-            <template v-slot:item.4>
-                <v-card title="Tira" flat>
+            <template v-slot:item.3>
+                <v-card flat>
                     <v-container class="ml-4 mr-4">
                         <v-img src="@/assets/teachable_machine_screenshot_1.png" aspect-ratio="2.75">
                             <template v-slot:placeholder>
@@ -84,35 +72,38 @@ import File from "./UploadFile.vue"
                     </v-container>
                 </v-card>
             </template>
-
-            <template v-slot:item.5>
-                <v-card title="Tira" flat>
-                    <v-container class="ml-4 mr-4">
-                        <v-img src="@/assets/teachable_machine_screenshot_2.png" aspect-ratio="2.75">
-                            <template v-slot:placeholder>
-                                <v-row class="fill-height ma-0" align="center" justify="center">
-                                    <v-progress-circular indeterminate color="white"></v-progress-circular>
-                                </v-row>
-                            </template>
-                        </v-img>
-                        <p> <br> </p>
-                        <ul>
-                            <li class="text-left">Zum Schluss müssen die EntwicklerInnen das Modell natürlich noch
-                                überprüfen. Hat es funktioniert? – Kann die KI die Klassen jetzt zuverlässig unterscheiden?
-                            </li>
-                            <li class="text-left">Dafür kannst du weitere Bilder hochladen, welche das Modell jetzt auf die
-                                Probe stellen – hält das Auto an und gewährt Vorfahrt, oder kommt es zu einem Unfall, weil
-                                sich die KI nicht 100% sicher war?</li>
-                            <li class="text-left">Gehe dafür auf Datei und lade weitere Bilder, welche zu Testzwecken
-                                dienen, hoch.</li>
-                            <li class="text-left">Spiele ein wenig mit den Einstellungen unter „erweitert“ herum – was fällt
-                                auf? Kann das Modell verbessert werden?</li>
-                        </ul>
-                    </v-container>
-                </v-card>
+            <template v-slot:item.4>
+                <v-container fluid class="ml-4 mr-4">
+                    <v-row>
+                        <v-col cols="12" md="6">
+                            <ul>
+                                <li class="text-left">Zum Schluss müssen die EntwicklerInnen das Modell natürlich noch
+                                    überprüfen. Hat es funktioniert? – Kann die KI die Klassen jetzt zuverlässig
+                                    unterscheiden?</li>
+                                <li class="text-left">Dafür kannst du weitere Bilder hochladen, welche das Modell jetzt auf
+                                    die Probe stellen – hält das Auto an und gewährt Vorfahrt, oder kommt es zu einem
+                                    Unfall, weil sich die KI nicht 100% sicher war?</li>
+                                <li class="text-left">Gehe dafür auf Datei und lade weitere Bilder, welche zu Testzwecken
+                                    dienen, hoch.</li>
+                                <li class="text-left">Spiele ein wenig mit den Einstellungen unter „erweitert“ herum – was
+                                    fällt auf? Kann das Modell verbessert werden?</li>
+                            </ul>
+                        </v-col>
+                        <v-col cols="12" md="6">
+                            <v-img src="@/assets/teachable_machine_screenshot_2.png" aspect-ratio="1.3">
+                                <template v-slot:placeholder>
+                                    <v-row class="fill-height ma-0" align="center" justify="center">
+                                        <v-progress-circular indeterminate color="white"></v-progress-circular>
+                                    </v-row>
+                                </template>
+                            </v-img>
+                        </v-col>
+                    </v-row>
+                </v-container>
             </template>
 
-            <template v-slot:item.6>
+
+            <template v-slot:item.5>
                 <v-card title="Lade hier deine KI hoch" flat>
                     <v-container class="ml-4 mr-4">
                         <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">

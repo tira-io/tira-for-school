@@ -5,7 +5,7 @@
       </v-avatar>
 
       <v-spacer></v-spacer>
-      <v-btn @click="handleCenterButtonClick">Center Button</v-btn>
+      <v-btn @click="handleCenterButtonClick">Irgend ein Button</v-btn>
       <v-spacer></v-spacer>
 
       <v-btn @click="handleLoginButtonClick">Login</v-btn>
