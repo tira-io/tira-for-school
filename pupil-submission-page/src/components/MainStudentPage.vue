@@ -6,7 +6,7 @@ import File from "./UploadFile.vue"
 <!-- eslint-disable vue/valid-v-slot -->
 <template>
     <v-container>
-        <v-stepper :items="['Deine Aufgabe', 'Vorbereitung', 'KI trainieren', 'KI testen', 'Abschluss']">
+        <v-stepper :items="['Deine Aufgabe', 'Vorbereitungen', 'KI trainieren', 'KI testen', 'Abschluss']">
             <template v-slot:item.1>
                 <v-card title="Deine Aufgabe" flat>
                     <a href="#" @click.prevent="downloadMyPdf">
@@ -28,11 +28,13 @@ import File from "./UploadFile.vue"
             </template>
 
             <template v-slot:item.2>
-                <v-card title="Teachable Machine" flat>
+                <v-card flat>
                     <v-container class="ml-4 mr-4">
-                        <ol>
-                            <li class="text-left">Bereite alles vor. Alle Bilder eures Teams sollten in zwei Ordnern auf
-                                deinem Computer abgespeichert sein.</li>
+                        <ul>
+                            <li class="text-left">Bevor du beginnen kannst, musst du einen entsprechenden Datensatz
+                                vorbereitet haben.</li>
+                            <li class="text-left">Alle Bilder eures Teams sollten in zwei Ordnern auf deinem Computer
+                                abgespeichert sein.</li>
                             <li class="text-left">Öffne die Webseite <a href="https://teachablemachine.withgoogle.com"
                                     target="_blank">https://teachablemachine.withgoogle.com</a></li>
                             <li class="text-left">Klicke auf „Erste Schritte“</li>
@@ -42,7 +44,7 @@ import File from "./UploadFile.vue"
                             <li class="text-left">Erlaube der Webseite nicht auf deine Webcam zuzugreifen und lade nur
                                 Bilder hoch, welche du selbst erstellt hast oder welche eine entsprechende Lizenz haben.
                                 (Datenschutz)</li>
-                        </ol>
+                        </ul>
                     </v-container>
                 </v-card>
             </template>
@@ -104,7 +106,7 @@ import File from "./UploadFile.vue"
 
 
             <template v-slot:item.5>
-                <v-card title="Lade hier deine KI hoch" flat>
+                <v-card title="Du kannst hier deine KI auf TIRA hochladen, um weitere Rückmeldungen zu erhalten" flat>
                     <v-container class="ml-4 mr-4">
                         <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">
                             <template v-slot:placeholder>
