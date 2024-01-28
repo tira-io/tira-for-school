@@ -6,11 +6,11 @@ import File from "./UploadFile.vue"
 <!-- eslint-disable vue/valid-v-slot -->
 <template>
     <v-container>
-        <v-stepper :items="['Deine Aufgabe', 'Datensatz', 'KI trainieren', 'KI testen', 'KI hochladen']">
+        <v-stepper :items="['Deine Aufgabe', 'Vorbereitung', 'KI trainieren', 'KI testen', 'Abschluss']">
             <template v-slot:item.1>
-                <v-card title="Deine Aufgaben" flat>
+                <v-card title="Deine Aufgabe" flat>
                     <a href="#" @click.prevent="downloadMyPdf">
-                        <v-img src="@/assets/Aufgabe.png" aspect-ratio="2.75">
+                        <v-img src="@/assets/Auto1.jpg" aspect-ratio="2.75">
                             <template v-slot:placeholder>
                                 <v-row class="fill-height ma-0" align="center" justify="center">
                                     <v-progress-circular indeterminate color="white"></v-progress-circular>
