@@ -6,7 +6,7 @@ import File from "./UploadFile.vue"
 <!-- eslint-disable vue/valid-v-slot -->
 <template>
     <v-container>
-        <v-stepper :items="['Deine Aufgabe', 'Trainings-Datensatz', 'KI trainieren', 'KI testen']">
+        <v-stepper :items="['Deine Aufgabe', 'Baue Deinen Datensatz', 'Trainiere Deine KI', 'Teste Deine KI']">
             <template v-slot:item.1>
                 <v-card flat>
                     <a href="#" @click.prevent="downloadMyPdf">
@@ -77,9 +77,36 @@ import File from "./UploadFile.vue"
 
             <template v-slot:item.4>
                 <v-expansion-panels v-model="panel">
+                    <v-expansion-panel title="Quantitative Tests">
+                        <v-expansion-panel-text>
+                            <v-card title="Teste deine KI anhand vieler Beispiele, um die Accuracy zu messen"
+                                outlined>
+                                <v-container class="ml-4 mr-4">
+                                    <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">
+                                        <template v-slot:placeholder>
+                                            <v-row class="fill-height ma-0" align="center" justify="center">
+                                                <v-progress-circular indeterminate color="white"></v-progress-circular>
+                                            </v-row>
+                                        </template>
+                                    </v-img>
+                                    <p> <br> </p>
+                                    <ul>
+                                        <li class="text-left">Stelle außerdem sicher, dass du dein Model im richtigen Format
+                                            exportierst.</li>
+                                        <li class="text-left">Dafür musst du auf „Modell exportieren“ klicken und dann auf
+                                            „Tensorflow“.
+                                            Die Zipdatei lädst du herunter und im nächsten Schritt dann hier hoch.</li>
+                                    </ul>
 
-                    <v-expansion-panel title="Schritt 1">
-                        <v-expansion-panel-content>
+                                    <File />
+
+                                </v-container>
+                            </v-card>
+                        </v-expansion-panel-text>
+                    </v-expansion-panel>
+
+                    <v-expansion-panel title="Qualititative Tests">
+                        <v-expansion-panel-text>
                             <v-container fluid class="ml-4 mr-4">
                                 <v-row>
                                     <v-col cols="12" md="6">
@@ -107,45 +134,15 @@ import File from "./UploadFile.vue"
                                     </v-col>
                                 </v-row>
                             </v-container>
-                        </v-expansion-panel-content>
+                        </v-expansion-panel-text>
                     </v-expansion-panel>
 
-                    <v-expansion-panel title="Schritt 2">
-                        <v-expansion-panel-content>
-                            <v-card title="Du kannst hier deine KI auf TIRA hochladen, um weitere Rückmeldungen zu erhalten"
-                                outlined>
-                                <v-container class="ml-4 mr-4">
-                                    <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">
-                                        <template v-slot:placeholder>
-                                            <v-row class="fill-height ma-0" align="center" justify="center">
-                                                <v-progress-circular indeterminate color="white"></v-progress-circular>
-                                            </v-row>
-                                        </template>
-                                    </v-img>
-                                    <p> <br> </p>
-                                    <ul>
-                                        <li class="text-left">Stelle außerdem sicher, dass du dein Model im richtigen Format
-                                            exportierst.</li>
-                                        <li class="text-left">Dafür musst du auf „Modell exportieren“ klicken und dann auf
-                                            „Tensorflow“.
-                                            Die Zipdatei lädst du herunter und im nächsten Schritt dann hier hoch.</li>
-                                    </ul>
-
-                                    <File />
-
-                                </v-container>
-                            </v-card>
-                        </v-expansion-panel-content>
-                    </v-expansion-panel>
-
-                    <v-expansion-panel title="Schritt 3"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-                        <v-expansion-panel-header> Schritt 3 </v-expansion-panel-header>
-                        <v-expansion-panel-content>
+                    <v-expansion-panel title="Der Machine Learning Zyklus">
+                        <v-expansion-panel-text>
                             <v-container fluid class="ml-4 mr-4">
-                                test
+                                Jetzt beginnt ...
                             </v-container>
-                        </v-expansion-panel-content>
+                        </v-expansion-panel-text>
                     </v-expansion-panel>
 
                 </v-expansion-panels>
