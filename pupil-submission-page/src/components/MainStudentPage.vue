@@ -6,9 +6,9 @@ import File from "./UploadFile.vue"
 <!-- eslint-disable vue/valid-v-slot -->
 <template>
     <v-container>
-        <v-stepper :items="['Deine Aufgabe', 'Vorbereitung', 'KI trainieren', 'KI testen', 'Abschluss']">
+        <v-stepper :items="['Deine Aufgabe', 'Trainings-Datensatz', 'KI trainieren', 'KI testen']">
             <template v-slot:item.1>
-                <v-card title="Deine Aufgabe" flat>
+                <v-card flat>
                     <a href="#" @click.prevent="downloadMyPdf">
                         <v-img src="@/assets/Auto1.jpg" aspect-ratio="2.75">
                             <template v-slot:placeholder>
@@ -28,11 +28,13 @@ import File from "./UploadFile.vue"
             </template>
 
             <template v-slot:item.2>
-                <v-card title="Teachable Machine" flat>
+                <v-card flat>
                     <v-container class="ml-4 mr-4">
-                        <ol>
-                            <li class="text-left">Bereite alles vor. Alle Bilder eures Teams sollten in zwei Ordnern auf
-                                deinem Computer abgespeichert sein.</li>
+                        <ul>
+                            <li class="text-left">Bevor du beginnen kannst, musst du einen entsprechenden Datensatz
+                                vorbereitet haben.</li>
+                            <li class="text-left">Alle Bilder eures Teams sollten in zwei Ordnern auf deinem Computer
+                                abgespeichert sein.</li>
                             <li class="text-left">Öffne die Webseite <a href="https://teachablemachine.withgoogle.com"
                                     target="_blank">https://teachablemachine.withgoogle.com</a></li>
                             <li class="text-left">Klicke auf „Erste Schritte“</li>
@@ -42,7 +44,7 @@ import File from "./UploadFile.vue"
                             <li class="text-left">Erlaube der Webseite nicht auf deine Webcam zuzugreifen und lade nur
                                 Bilder hoch, welche du selbst erstellt hast oder welche eine entsprechende Lizenz haben.
                                 (Datenschutz)</li>
-                        </ol>
+                        </ul>
                     </v-container>
                 </v-card>
             </template>
@@ -72,61 +74,83 @@ import File from "./UploadFile.vue"
                     </v-container>
                 </v-card>
             </template>
+
             <template v-slot:item.4>
-                <v-container fluid class="ml-4 mr-4">
-                    <v-row>
-                        <v-col cols="12" md="6">
-                            <ul>
-                                <li class="text-left">Zum Schluss müssen die EntwicklerInnen das Modell natürlich noch
-                                    überprüfen. Hat es funktioniert? – Kann die KI die Klassen jetzt zuverlässig
-                                    unterscheiden?</li>
-                                <li class="text-left">Dafür kannst du weitere Bilder hochladen, welche das Modell jetzt auf
-                                    die Probe stellen – hält das Auto an und gewährt Vorfahrt, oder kommt es zu einem
-                                    Unfall, weil sich die KI nicht 100% sicher war?</li>
-                                <li class="text-left">Gehe dafür auf Datei und lade weitere Bilder, welche zu Testzwecken
-                                    dienen, hoch.</li>
-                                <li class="text-left">Spiele ein wenig mit den Einstellungen unter „erweitert“ herum – was
-                                    fällt auf? Kann das Modell verbessert werden?</li>
-                            </ul>
-                        </v-col>
-                        <v-col cols="12" md="6">
-                            <v-img src="@/assets/teachable_machine_screenshot_2.png" aspect-ratio="1.3">
-                                <template v-slot:placeholder>
-                                    <v-row class="fill-height ma-0" align="center" justify="center">
-                                        <v-progress-circular indeterminate color="white"></v-progress-circular>
-                                    </v-row>
-                                </template>
-                            </v-img>
-                        </v-col>
-                    </v-row>
-                </v-container>
-            </template>
+                <v-expansion-panels v-model="panel">
 
-
-            <template v-slot:item.5>
-                <v-card title="Lade hier deine KI hoch" flat>
-                    <v-container class="ml-4 mr-4">
-                        <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">
-                            <template v-slot:placeholder>
-                                <v-row class="fill-height ma-0" align="center" justify="center">
-                                    <v-progress-circular indeterminate color="white"></v-progress-circular>
+                    <v-expansion-panel title="Schritt 1">
+                        <v-expansion-panel-content>
+                            <v-container fluid class="ml-4 mr-4">
+                                <v-row>
+                                    <v-col cols="12" md="6">
+                                        <ul>
+                                            <li class="text-left">Zum Schluss müssen die EntwicklerInnen das Modell
+                                                natürlich noch überprüfen. Hat es funktioniert? – Kann die KI die Klassen
+                                                jetzt zuverlässig unterscheiden?</li>
+                                            <li class="text-left">Dafür kannst du weitere Bilder hochladen, welche das
+                                                Modell jetzt auf die Probe stellen – hält das Auto an und gewährt Vorfahrt,
+                                                oder kommt es zu einem Unfall, weil sich die KI nicht 100% sicher war?</li>
+                                            <li class="text-left">Gehe dafür auf Datei und lade weitere Bilder, welche zu
+                                                Testzwecken dienen, hoch.</li>
+                                            <li class="text-left">Spiele ein wenig mit den Einstellungen unter „erweitert“
+                                                herum – was fällt auf? Kann das Modell verbessert werden?</li>
+                                        </ul>
+                                    </v-col>
+                                    <v-col cols="12" md="6">
+                                        <v-img src="@/assets/teachable_machine_screenshot_2.png" aspect-ratio="1.3">
+                                            <template v-slot:placeholder>
+                                                <v-row class="fill-height ma-0" align="center" justify="center">
+                                                    <v-progress-circular indeterminate color="white"></v-progress-circular>
+                                                </v-row>
+                                            </template>
+                                        </v-img>
+                                    </v-col>
                                 </v-row>
-                            </template>
-                        </v-img>
-                        <p> <br> </p>
-                        <ul>
-                            <li class="text-left">Stelle außerdem sicher, dass du dein Model im richtigen Format
-                                exportierst.</li>
-                            <li class="text-left">Dafür musst du auf „Modell exportieren“ klicken und dann auf „Tensorflow“.
-                                Die Zipdatei lädst du herunter und im nächsten Schritt dann hier hoch.</li>
-                        </ul>
+                            </v-container>
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>
 
-                        <File />
+                    <v-expansion-panel title="Schritt 2">
+                        <v-expansion-panel-content>
+                            <v-card title="Du kannst hier deine KI auf TIRA hochladen, um weitere Rückmeldungen zu erhalten"
+                                outlined>
+                                <v-container class="ml-4 mr-4">
+                                    <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">
+                                        <template v-slot:placeholder>
+                                            <v-row class="fill-height ma-0" align="center" justify="center">
+                                                <v-progress-circular indeterminate color="white"></v-progress-circular>
+                                            </v-row>
+                                        </template>
+                                    </v-img>
+                                    <p> <br> </p>
+                                    <ul>
+                                        <li class="text-left">Stelle außerdem sicher, dass du dein Model im richtigen Format
+                                            exportierst.</li>
+                                        <li class="text-left">Dafür musst du auf „Modell exportieren“ klicken und dann auf
+                                            „Tensorflow“.
+                                            Die Zipdatei lädst du herunter und im nächsten Schritt dann hier hoch.</li>
+                                    </ul>
 
-                    </v-container>
-                </v-card>
+                                    <File />
+
+                                </v-container>
+                            </v-card>
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>
+
+                    <v-expansion-panel title="Schritt 3"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
+                        <v-expansion-panel-header> Schritt 3 </v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                            <v-container fluid class="ml-4 mr-4">
+                                test
+                            </v-container>
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>
+
+                </v-expansion-panels>
+
             </template>
-
         </v-stepper>
     </v-container>
 </template> 
@@ -134,6 +158,7 @@ import File from "./UploadFile.vue"
 
 <script lang="ts">
 import pdfPath from '@/assets/StudentAufgabe.pdf';
+
 // Define the method
 const downloadMyPdf = () => {
     // Trigger download
@@ -143,9 +168,18 @@ const downloadMyPdf = () => {
     link.click();
 }
 
-// Expose the method to the template
-export { downloadMyPdf };
+export default {
+    data() {
+        return {
+            panel: null, // This will track the open panel. Set to the index of the panel you want open by default, or null for all closed.
+        };
+    },
+    methods: {
+        downloadMyPdf,
+    },
+};
 </script>
+
 
 
 <style></style>
