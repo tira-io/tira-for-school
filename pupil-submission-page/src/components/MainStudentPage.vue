@@ -6,9 +6,9 @@ import File from "./UploadFile.vue"
 <!-- eslint-disable vue/valid-v-slot -->
 <template>
     <v-container>
-        <v-stepper :items="['Deine Aufgabe', 'Vorbereitungen', 'KI trainieren', 'KI testen', 'Abschluss']">
+        <v-stepper :items="['Deine Aufgabe', 'Trainings-Datensatz', 'KI trainieren', 'KI testen']">
             <template v-slot:item.1>
-                <v-card title="Deine Aufgabe" flat>
+                <v-card flat>
                     <a href="#" @click.prevent="downloadMyPdf">
                         <v-img src="@/assets/Auto1.jpg" aspect-ratio="2.75">
                             <template v-slot:placeholder>
@@ -74,60 +74,70 @@ import File from "./UploadFile.vue"
                     </v-container>
                 </v-card>
             </template>
+
             <template v-slot:item.4>
-                <v-container fluid class="ml-4 mr-4">
-                    <v-row>
-                        <v-col cols="12" md="6">
-                            <ul>
-                                <li class="text-left">Zum Schluss müssen die EntwicklerInnen das Modell natürlich noch
-                                    überprüfen. Hat es funktioniert? – Kann die KI die Klassen jetzt zuverlässig
-                                    unterscheiden?</li>
-                                <li class="text-left">Dafür kannst du weitere Bilder hochladen, welche das Modell jetzt auf
-                                    die Probe stellen – hält das Auto an und gewährt Vorfahrt, oder kommt es zu einem
-                                    Unfall, weil sich die KI nicht 100% sicher war?</li>
-                                <li class="text-left">Gehe dafür auf Datei und lade weitere Bilder, welche zu Testzwecken
-                                    dienen, hoch.</li>
-                                <li class="text-left">Spiele ein wenig mit den Einstellungen unter „erweitert“ herum – was
-                                    fällt auf? Kann das Modell verbessert werden?</li>
-                            </ul>
-                        </v-col>
-                        <v-col cols="12" md="6">
-                            <v-img src="@/assets/teachable_machine_screenshot_2.png" aspect-ratio="1.3">
-                                <template v-slot:placeholder>
-                                    <v-row class="fill-height ma-0" align="center" justify="center">
-                                        <v-progress-circular indeterminate color="white"></v-progress-circular>
-                                    </v-row>
-                                </template>
-                            </v-img>
-                        </v-col>
-                    </v-row>
-                </v-container>
+                <v-stepper :items="['Schritt 1', 'Schritt 2', 'Schritt 3']">
+                    <template v-slot:item.1>
+                        <v-card outlined>
+
+                        </v-card>
+                    </template>
+
+                    <template v-slot:item.2>
+                        <v-card title="Du kannst hier deine KI auf TIRA hochladen, um weitere Rückmeldungen zu erhalten"
+                            outlined>
+                            <v-container class="ml-4 mr-4">
+                                <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">
+                                    <template v-slot:placeholder>
+                                        <v-row class="fill-height ma-0" align="center" justify="center">
+                                            <v-progress-circular indeterminate color="white"></v-progress-circular>
+                                        </v-row>
+                                    </template>
+                                </v-img>
+                                <p> <br> </p>
+                                <ul>
+                                    <li class="text-left">Stelle außerdem sicher, dass du dein Model im richtigen Format
+                                        exportierst.</li>
+                                    <li class="text-left">Dafür musst du auf „Modell exportieren“ klicken und dann auf
+                                        „Tensorflow“.
+                                        Die Zipdatei lädst du herunter und im nächsten Schritt dann hier hoch.</li>
+                                </ul>
+
+                                <File />
+
+                            </v-container>
+                        </v-card>
+                    </template>
+
+                    <template v-slot:item.3>
+                        <v-card title="Du kannst hier deine KI auf TIRA hochladen, um weitere Rückmeldungen zu erhalten"
+                            outlined>
+                            <v-container class="ml-4 mr-4">
+                                <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">
+                                    <template v-slot:placeholder>
+                                        <v-row class="fill-height ma-0" align="center" justify="center">
+                                            <v-progress-circular indeterminate color="white"></v-progress-circular>
+                                        </v-row>
+                                    </template>
+                                </v-img>
+                                <p> <br> </p>
+                                <ul>
+                                    <li class="text-left">Stelle außerdem sicher, dass du dein Model im richtigen Format
+                                        exportierst.</li>
+                                    <li class="text-left">Dafür musst du auf „Modell exportieren“ klicken und dann auf
+                                        „Tensorflow“.
+                                        Die Zipdatei lädst du herunter und im nächsten Schritt dann hier hoch.</li>
+                                </ul>
+
+                                <File />
+
+                            </v-container>
+                        </v-card>
+                    </template>
+
+                </v-stepper>
             </template>
 
-
-            <template v-slot:item.5>
-                <v-card title="Du kannst hier deine KI auf TIRA hochladen, um weitere Rückmeldungen zu erhalten" flat>
-                    <v-container class="ml-4 mr-4">
-                        <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">
-                            <template v-slot:placeholder>
-                                <v-row class="fill-height ma-0" align="center" justify="center">
-                                    <v-progress-circular indeterminate color="white"></v-progress-circular>
-                                </v-row>
-                            </template>
-                        </v-img>
-                        <p> <br> </p>
-                        <ul>
-                            <li class="text-left">Stelle außerdem sicher, dass du dein Model im richtigen Format
-                                exportierst.</li>
-                            <li class="text-left">Dafür musst du auf „Modell exportieren“ klicken und dann auf „Tensorflow“.
-                                Die Zipdatei lädst du herunter und im nächsten Schritt dann hier hoch.</li>
-                        </ul>
-
-                        <File />
-
-                    </v-container>
-                </v-card>
-            </template>
 
         </v-stepper>
     </v-container>
@@ -147,6 +157,13 @@ const downloadMyPdf = () => {
 
 // Expose the method to the template
 export { downloadMyPdf };
+export default {
+  data() {
+    return {
+      panel: null, // This will track the open panel. Set to the index of the panel you want open by default, or null for all closed.
+    };
+  },
+};
 </script>
 
 
