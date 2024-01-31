@@ -76,11 +76,10 @@ import File from "./UploadFile.vue"
             </template>
 
             <template v-slot:item.4>
-                <v-expansion-panels v-model="panel">
+                <v-expansion-panels>
                     <v-expansion-panel title="Quantitative Tests">
                         <v-expansion-panel-text>
-                            <v-card title="Teste deine KI anhand vieler Beispiele, um die Accuracy zu messen"
-                                outlined>
+                            <v-card title="Teste deine KI anhand vieler Beispiele, um die Accuracy zu messen" flat>
                                 <v-container class="ml-4 mr-4">
                                     <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">
                                         <template v-slot:placeholder>
@@ -108,7 +107,7 @@ import File from "./UploadFile.vue"
                     <v-expansion-panel title="Qualititative Tests">
                         <v-expansion-panel-text>
                             <v-container fluid class="ml-4 mr-4">
-                                <v-row>
+                                <v-row align="center" justify="center">
                                     <v-col cols="12" md="6">
                                         <ul>
                                             <li class="text-left">Zum Schluss müssen die EntwicklerInnen das Modell
@@ -166,11 +165,6 @@ const downloadMyPdf = () => {
 }
 
 export default {
-    data() {
-        return {
-            panel: null, // This will track the open panel. Set to the index of the panel you want open by default, or null for all closed.
-        };
-    },
     methods: {
         downloadMyPdf,
     },
