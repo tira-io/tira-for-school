@@ -9,20 +9,15 @@ import File from "./UploadFile.vue"
         <v-stepper :items="['Deine Aufgabe', 'Baue Deinen Datensatz', 'Trainiere Deine KI', 'Teste Deine KI']">
             <template v-slot:item.1>
                 <v-card flat>
-                    <a href="#" @click.prevent="downloadMyPdf">
-                        <v-img src="@/assets/TaskBild.png" aspect-ratio="2.75">
-                            <template v-slot:placeholder>
-                                <v-row class="fill-height ma-0" align="center" justify="center">
-                                    <v-progress-circular indeterminate color="white"></v-progress-circular>
-                                </v-row>
-                            </template>
-                        </v-img>
-                    </a>
+                    <v-img src="@/assets/TaskBild.png" aspect-ratio="2.75">
+                        <template v-slot:placeholder>
+                            <v-row class="fill-height ma-0" align="center" justify="center">
+                                <v-progress-circular indeterminate color="white"></v-progress-circular>
+                            </v-row>
+                        </template>
+                    </v-img>
                     <v-card>
-                        <v-card-text>
-                            Dein Auftrag, für den Fall, dass du ihn annehmen willst:
-                        </v-card-text>
-                        <v-btn @click="downloadMyPdf" color="blue"> Download PDF </v-btn>
+                        <v-btn @click="downloadMyPdf" color="blue" class="mt-5">Download Aufgabe</v-btn>
                     </v-card>
                 </v-card>
             </template>
@@ -31,9 +26,9 @@ import File from "./UploadFile.vue"
                 <v-card flat>
                     <v-container class="ml-4 mr-4">
                         <ul>
-                            <li class="text-left">Bevor du beginnen kannst, musst du einen entsprechenden Datensatz
+                            <li class="text-left">Bevor du beginnen kannst, musst du einen entsprechend gelabelten Datensatz
                                 vorbereitet haben.</li>
-                            <li class="text-left">Alle Bilder eures Teams sollten in zwei Ordnern auf deinem Computer
+                            <li class="text-left">Alle Bilder deines Teams sollten in zwei Ordnern auf deinem Computer
                                 abgespeichert sein.</li>
                             <li class="text-left">Öffne die Webseite <a href="https://teachablemachine.withgoogle.com"
                                     target="_blank">https://teachablemachine.withgoogle.com</a></li>
@@ -77,9 +72,9 @@ import File from "./UploadFile.vue"
 
             <template v-slot:item.4>
                 <v-expansion-panels>
-                    <v-expansion-panel title="Quantitative Tests">
+                    <v-expansion-panel title="Mengen-Tests">
                         <v-expansion-panel-text>
-                            <v-card title="Teste deine KI anhand vieler Beispiele, um die Accuracy zu messen" flat>
+                            <v-card title="Teste deine KI anhand tausender Beispiele, um die Genauigkeit zu messen" flat>
                                 <v-container class="ml-4 mr-4">
                                     <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">
                                         <template v-slot:placeholder>
@@ -90,11 +85,14 @@ import File from "./UploadFile.vue"
                                     </v-img>
                                     <p> <br> </p>
                                     <ul>
-                                        <li class="text-left">Stelle außerdem sicher, dass du dein Model im richtigen Format
+                                        <li class="text-left">Um deine KI so oft testen zu lassen, kannst du sie hier
+                                            hochladen.</li>
+                                        <li class="text-left">Stelle sicher, dass du dein Model im richtigen Format
                                             exportierst.</li>
                                         <li class="text-left">Dafür musst du auf „Modell exportieren“ klicken und dann auf
-                                            „Tensorflow“.
-                                            Die Zipdatei lädst du herunter und im nächsten Schritt dann hier hoch.</li>
+                                            „Tensorflow“.</li>
+                                        <li class="text-left"> Die Zipdatei lädst du herunter und im nächsten Schritt dann
+                                            hier hoch.</li>
                                     </ul>
 
                                     <File />
@@ -104,7 +102,7 @@ import File from "./UploadFile.vue"
                         </v-expansion-panel-text>
                     </v-expansion-panel>
 
-                    <v-expansion-panel title="Qualititative Tests">
+                    <v-expansion-panel title="Qualititative-Tests">
                         <v-expansion-panel-text>
                             <v-container fluid class="ml-4 mr-4">
                                 <v-row align="center" justify="center">
