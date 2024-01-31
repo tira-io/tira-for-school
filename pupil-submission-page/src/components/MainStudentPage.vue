@@ -10,7 +10,7 @@ import File from "./UploadFile.vue"
             <template v-slot:item.1>
                 <v-card flat>
                     <a href="#" @click.prevent="downloadMyPdf">
-                        <v-img src="@/assets/Auto1.jpg" aspect-ratio="2.75">
+                        <v-img src="@/assets/TaskBild.png" aspect-ratio="2.75">
                             <template v-slot:placeholder>
                                 <v-row class="fill-height ma-0" align="center" justify="center">
                                     <v-progress-circular indeterminate color="white"></v-progress-circular>
