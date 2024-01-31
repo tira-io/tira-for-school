@@ -4,6 +4,35 @@
   "source": "https://excalidraw.com",
   "elements": [
     {
+      "id": "A1yFL_uYAe-fHvBNsGKnW",
+      "type": "rectangle",
+      "x": -313.3670419439736,
+      "y": 141.2101348740033,
+      "width": 1308.7406026429162,
+      "height": 805.728929136346,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "#e9ecef",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1908318204,
+      "version": 86,
+      "versionNonce": 1283078084,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1706729414422,
+      "link": null,
+      "locked": false
+    },
+    {
       "id": "KlcnWPbVVi69-9Tm4CqPq",
       "type": "image",
       "x": -252.364583550769,
@@ -151,8 +180,8 @@
     },
     {
       "type": "ellipse",
-      "version": 212,
-      "versionNonce": 1178616132,
+      "version": 215,
+      "versionNonce": 483464188,
       "isDeleted": false,
       "id": "V2tKwgGUp1Bgn7JyWj99K",
       "fillStyle": "solid",
@@ -164,7 +193,7 @@
       "x": 109.07656700396092,
       "y": 619.2006654378162,
       "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
+      "backgroundColor": "#4dabf7",
       "width": 260.8528138181109,
       "height": 225.86024923291097,
       "seed": 54553724,
@@ -187,7 +216,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1706728916219,
+      "updated": 1706729403096,
       "link": null,
       "locked": false
     },
@@ -236,7 +265,7 @@
       "height": 309.8690720610175,
       "angle": 0,
       "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
+      "backgroundColor": "#a5d8ff",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -250,8 +279,8 @@
         "type": 3
       },
       "seed": 1051418564,
-      "version": 256,
-      "versionNonce": 810014076,
+      "version": 263,
+      "versionNonce": 1525599612,
       "isDeleted": false,
       "boundElements": [
         {
@@ -259,7 +288,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1706728849332,
+      "updated": 1706729436472,
       "link": null,
       "locked": false
     },
@@ -272,7 +301,7 @@
       "height": 69.23810727273477,
       "angle": 0,
       "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
+      "backgroundColor": "#ffffff",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -286,18 +315,18 @@
         "type": 3
       },
       "seed": 310581956,
-      "version": 237,
-      "versionNonce": 1001617148,
+      "version": 240,
+      "versionNonce": 1231851900,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1706728849332,
+      "boundElements": [],
+      "updated": 1706729442200,
       "link": null,
       "locked": false
     },
     {
       "type": "rectangle",
-      "version": 295,
-      "versionNonce": 1487091580,
+      "version": 298,
+      "versionNonce": 2104545348,
       "isDeleted": false,
       "id": "0CU-dinr4w5LLwKb7AOgY",
       "fillStyle": "solid",
@@ -309,7 +338,7 @@
       "x": 521.0163442731827,
       "y": 468.23521208398415,
       "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
+      "backgroundColor": "#ffffff",
       "width": 365.4866599881686,
       "height": 72.64329664495527,
       "seed": 2006654916,
@@ -321,7 +350,7 @@
         "type": 3
       },
       "boundElements": [],
-      "updated": 1706728849332,
+      "updated": 1706729447516,
       "link": null,
       "locked": false
     },
@@ -330,7 +359,7 @@
       "type": "text",
       "x": 542.8660784847629,
       "y": 273.2901014436132,
-      "width": 207.21667838653525,
+      "width": 207.2154541015625,
       "height": 32.11268913422506,
       "angle": 0,
       "strokeColor": "#1e1e1e",
@@ -346,11 +375,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 1295253956,
-      "version": 202,
-      "versionNonce": 851896316,
+      "version": 203,
+      "versionNonce": 1667783492,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1706728849332,
+      "updated": 1706729086058,
       "link": null,
       "locked": false,
       "text": "Vorfahrtsstraße",
@@ -365,8 +394,8 @@
     },
     {
       "type": "text",
-      "version": 241,
-      "versionNonce": 1579190396,
+      "version": 242,
+      "versionNonce": 709946108,
       "isDeleted": false,
       "id": "q7H7zuXblbWa-r19_zmov",
       "fillStyle": "solid",
@@ -379,7 +408,7 @@
       "y": 419.5461671311692,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
-      "width": 226.48427008925916,
+      "width": 226.48294067382812,
       "height": 32.11268913422506,
       "seed": 354833404,
       "groupIds": [
@@ -388,7 +417,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1706728849332,
+      "updated": 1706729086061,
       "link": null,
       "locked": false,
       "fontSize": 25.690151307380045,
@@ -551,8 +580,8 @@
     },
     {
       "type": "rectangle",
-      "version": 339,
-      "versionNonce": 599990652,
+      "version": 342,
+      "versionNonce": 2095183612,
       "isDeleted": false,
       "id": "HD4oaf5EVrb-md4xBW4jL",
       "fillStyle": "solid",
@@ -564,7 +593,7 @@
       "x": 510.09227170920167,
       "y": 597.002722007567,
       "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
+      "backgroundColor": "#a5d8ff",
       "width": 435.8502528990802,
       "height": 306.6677998902497,
       "seed": 997613308,
@@ -581,14 +610,14 @@
           "type": "arrow"
         }
       ],
-      "updated": 1706728958059,
+      "updated": 1706729451708,
       "link": null,
       "locked": false
     },
     {
       "type": "rectangle",
-      "version": 320,
-      "versionNonce": 605913924,
+      "version": 323,
+      "versionNonce": 1299544956,
       "isDeleted": false,
       "id": "7b3hxoyD7YNYa2aQnBrTm",
       "fillStyle": "solid",
@@ -600,7 +629,7 @@
       "x": 528.0654594600778,
       "y": 674.5122280940332,
       "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
+      "backgroundColor": "#ffffff",
       "width": 361.71079986239056,
       "height": 68.5228050823787,
       "seed": 801709948,
@@ -612,14 +641,14 @@
         "type": 3
       },
       "boundElements": [],
-      "updated": 1706728958059,
+      "updated": 1706729457284,
       "link": null,
       "locked": false
     },
     {
       "type": "rectangle",
-      "version": 378,
-      "versionNonce": 1491223292,
+      "version": 379,
+      "versionNonce": 775015548,
       "isDeleted": false,
       "id": "2SC4C9xFshXnadTQvF5UQ",
       "fillStyle": "solid",
@@ -631,7 +660,7 @@
       "x": 527.7844824386859,
       "y": 818.0169780498161,
       "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
+      "backgroundColor": "#ffffff",
       "width": 361.71079986239056,
       "height": 71.89281528069527,
       "seed": 2096091132,
@@ -643,14 +672,14 @@
         "type": 3
       },
       "boundElements": [],
-      "updated": 1706728958059,
+      "updated": 1706729461258,
       "link": null,
       "locked": false
     },
     {
       "type": "text",
-      "version": 285,
-      "versionNonce": 1335130820,
+      "version": 286,
+      "versionNonce": 264524484,
       "isDeleted": false,
       "id": "IqZ-ANfAbm0e5VfLX71eT",
       "fillStyle": "solid",
@@ -663,8 +692,8 @@
       "y": 625.0858546504738,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
-      "width": 205.0759129935077,
-      "height": 31.780931410325223,
+      "width": 205.03761291503906,
+      "height": 31.780931410325234,
       "seed": 1122791548,
       "groupIds": [
         "3Jih2TY_CFgzjXi5oIhsF"
@@ -672,7 +701,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1706728958059,
+      "updated": 1706729086061,
       "link": null,
       "locked": false,
       "fontSize": 25.424745128260188,
@@ -683,12 +712,12 @@
       "containerId": null,
       "originalText": "Vorfahrtsstraße",
       "lineHeight": 1.25,
-      "baseline": 21.99999999999999
+      "baseline": 22
     },
     {
       "type": "text",
-      "version": 324,
-      "versionNonce": 2115535740,
+      "version": 325,
+      "versionNonce": 2071079804,
       "isDeleted": false,
       "id": "qYG1AkHmbZOsOOeFlAVue",
       "fillStyle": "solid",
@@ -701,8 +730,8 @@
       "y": 769.8309419439055,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
-      "width": 224.1444502868794,
-      "height": 31.780931410325223,
+      "width": 224.10263061523438,
+      "height": 31.780931410325234,
       "seed": 1367408892,
       "groupIds": [
         "3Jih2TY_CFgzjXi5oIhsF"
@@ -710,7 +739,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1706728958059,
+      "updated": 1706729086062,
       "link": null,
       "locked": false,
       "fontSize": 25.424745128260188,
@@ -721,7 +750,7 @@
       "containerId": null,
       "originalText": "Vorfahrt-gewähren",
       "lineHeight": 1.25,
-      "baseline": 21.99999999999999
+      "baseline": 22
     },
     {
       "type": "rectangle",
@@ -873,8 +902,8 @@
     },
     {
       "type": "ellipse",
-      "version": 332,
-      "versionNonce": 530854908,
+      "version": 339,
+      "versionNonce": 829498180,
       "isDeleted": false,
       "id": "lBnrWiBrRnAyZwTSYmsQR",
       "fillStyle": "solid",
@@ -886,7 +915,7 @@
       "x": 108.28135728925804,
       "y": 271.26462142885043,
       "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
+      "backgroundColor": "#4dabf7",
       "width": 260.8528138181109,
       "height": 225.86024923291097,
       "seed": 174734460,
@@ -909,7 +938,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1706728846450,
+      "updated": 1706729394100,
       "link": null,
       "locked": false
     },
