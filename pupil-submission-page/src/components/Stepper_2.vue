@@ -1,4 +1,20 @@
 <template>
+
+    <v-card>
+        <template v-slot:title>
+            Klasse: 
+        </template>
+
+        <template v-slot:subtitle>
+            Bildbeispiele hinzuf&uuml;gen:
+        </template>
+
+        <template v-slot:text>
+            This is content
+        </template>
+    </v-card>
+
+
     <v-card flat>
         <v-container class="ml-4 mr-4">
             <ul>
