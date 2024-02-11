@@ -50,4 +50,21 @@ export default defineConfig({
     },
     port: 3000,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // TODO: We would usually like to use assets/ here, but we first have to fix this disraptor problem: https://github.com/disraptor/disraptor/issues/33
+        assetFileNames: 'assets-public/[name].[ext]',
+        chunkFileNames: 'chunks/[name].js',
+        entryFileNames: 'entries/[name].js',
+      },
+    },
+    outDir: '/dist',
+  },
+  experimental: {
+    renderBuiltUrl(filename: string, { hostType }: { hostType: 'js' | 'css' | 'html' }) {
+      // Github pages places the resourecs/assets at this location
+      return '/tira-for-school/dist/' + filename
+    }
+  }
 })

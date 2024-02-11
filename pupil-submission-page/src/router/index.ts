@@ -1,14 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    {
-      path: "/",
-      name: "StudentPage",
-      component: () => import("../views/StudentPageView.vue"),
-    },
+    {path: "/", component: () => import("../views/StudentPageView.vue")},
+    {path: '/:pathMatch(.*)*', component: () => import("../views/StudentPageView.vue")},
   ],
 });
 
