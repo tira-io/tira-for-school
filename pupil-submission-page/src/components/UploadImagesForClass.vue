@@ -6,7 +6,7 @@
         <template v-slot:text>
             
         <v-row><v-col cols="6"> 
-        <v-file-input accept="image/png, image/jpeg, image/bmp" placeholder="Bitte f&uuml;ge deine Bildbeispiele f&uuml;r die Klasse {{class_name}} hinzu:" multiple label="Bitte f&uuml;ge deine Bildbeispiele f&uuml;r die Klasse {{class_name}} hinzu:" v-model="to_upload" @change="update_files" block/>
+        <v-file-input accept="image/png, image/jpeg, image/bmp" placeholder="Bitte f&uuml;ge deine Bildbeispiele f&uuml;r die Klasse {{class_name}} hinzu:" multiple :label="'Bitte f&uuml;ge deine Bildbeispiele f&uuml;r die Klasse ' + class_name + ' hinzu:'" v-model="to_upload" @change="update_files" block/>
         </v-col></v-row>
             <v-virtual-scroll height="150" :items="image_rows">
                 <template v-slot:default="{ item }">

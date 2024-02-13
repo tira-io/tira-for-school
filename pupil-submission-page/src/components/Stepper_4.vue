@@ -1,5 +1,5 @@
 <template>
-    <v-card class="mx-auto" max-width="500" min-height="500" image="@/assets/result-fail.png" title="Deine KI war in" theme="dark">
+    <v-card class="mx-auto" max-width="500" min-height="500" @click="show=true;" image="@/assets/result-fail.png" title="Deine KI war in" theme="dark">
         <v-card-text class="py-0">
             <v-row align="center" no-gutters>
                 <v-col class="text-h2" style="color: red;" cols="8">75 von 100</v-col>
@@ -13,65 +13,75 @@
     <br><br>
 
     <v-expansion-panels>
-        <v-expansion-panel title="Mengen-Tests">
+        <v-expansion-panel title="Quantitative Tests">
             <v-expansion-panel-text>
-                <v-card title="Teste deine KI anhand tausender Beispiele, um die Genauigkeit zu messen" flat>
-                    <v-container class="ml-4 mr-4">
-                        <v-img src="@/assets/teachable_machine_screenshot_3.png" aspect-ratio="5">
-                            <template v-slot:placeholder>
-                                <v-row class="fill-height ma-0" align="center" justify="center">
-                                    <v-progress-circular indeterminate color="white"></v-progress-circular>
+                Hier etwas text (eine ganz einfache Darstellung eine Konfusion Matrix, mit guten Bildern, etc.)...
+
+                <v-row>
+                    <v-col cols="6">
+                        <v-card class="mx-auto" @click="show=true;" style="width: 100%" image="@/assets/result-win.png" title="Deine KI hat " theme="dark">
+                            <v-card-text class="py-0">
+                                <v-row align="center" no-gutters>
+                                    <v-col class="text-h2" style="color: red;" cols="8">91</v-col>
                                 </v-row>
-                            </template>
-                        </v-img>
-                        <p> <br> </p>
-                        <ul>
-                            <li class="text-left">Um deine KI so oft testen zu lassen, kannst du sie hier
-                                hochladen.</li>
-                            <li class="text-left">Stelle sicher, dass du dein Model im richtigen Format
-                                exportierst.</li>
-                            <li class="text-left">Dafür musst du auf „Modell exportieren“ klicken und dann auf
-                                „Tensorflow“.</li>
-                            <li class="text-left"> Die Zipdatei lädst du herunter und im nächsten Schritt dann
-                                hier hoch.</li>
-                        </ul>
+                                <br>
+                                "Vorfahrt gew&auml;hren" Schilder korrekt erkannt.
+                            </v-card-text>
+                        </v-card>
+                    </v-col>
 
-                        <File />
+                    <v-col cols="6">
+                        <v-card class="mx-auto" @click="show=true;" style="width: 100%" image="@/assets/result-win.png" title="Deine KI hat " theme="dark">
+                            <v-card-text class="py-0">
+                                <v-row align="center" no-gutters>
+                                    <v-col class="text-h2" style="color: red;" cols="8">23</v-col>
+                                </v-row>
+                                <br>
+                                "Vorfahrt gew&auml;hren" Schilder f&auml;lschlich als Vorfahrtsstra&szlig;e erkannt.
+                            </v-card-text>
+                        </v-card>
+                    </v-col>
+                </v-row>
 
-                    </v-container>
-                </v-card>
+                <v-row>
+<v-col cols="6">
+                        <v-card class="mx-auto" @click="show=true;" style="width: 100%" image="@/assets/result-win.png" title="Deine KI hat " theme="dark">
+                            <v-card-text class="py-0">
+                                <v-row align="center" no-gutters>
+                                    <v-col class="text-h2" style="color: red;" cols="8">32</v-col>
+                                </v-row>
+                                <br>
+                                "Vorfahrt gew&auml;hren" Schilder f&auml;lschlich als Vorfahrtsstra&szlig;e erkannt.
+                            </v-card-text>
+                        </v-card>
+                    </v-col>
+
+                    <v-col cols="6">
+                        <v-card class="mx-auto" @click="show=true;" style="width: 100%" image="@/assets/result-win.png" title="Deine KI hat " theme="dark">
+                            <v-card-text class="py-0">
+                                <v-row align="center" no-gutters>
+                                    <v-col class="text-h2" style="color: red;" cols="8">87</v-col>
+                                </v-row>
+                                <br>
+                                "Vorfahrt gew&auml;hren" Schilder korrekt erkannt.
+                            </v-card-text>
+                        </v-card>
+                    </v-col>
+                </v-row>
+
+                Vergleiche deine KI doch mal mit anderen:
+                <v-data-table :items="items"/>
             </v-expansion-panel-text>
         </v-expansion-panel>
 
-        <v-expansion-panel title="Qualititative-Tests">
+        <v-expansion-panel title="Qualititative Tests">
             <v-expansion-panel-text>
-                <v-container fluid class="ml-4 mr-4">
-                    <v-row align="center" justify="center">
-                        <v-col cols="12" md="6">
-                            <ul>
-                                <li class="text-left">Zum Schluss müssen die EntwicklerInnen das Modell
-                                    natürlich noch überprüfen. Hat es funktioniert? – Kann die KI die Klassen
-                                    jetzt zuverlässig unterscheiden?</li>
-                                <li class="text-left">Dafür kannst du weitere Bilder hochladen, welche das
-                                    Modell jetzt auf die Probe stellen – hält das Auto an und gewährt Vorfahrt,
-                                    oder kommt es zu einem Unfall, weil sich die KI nicht 100% sicher war?</li>
-                                <li class="text-left">Gehe dafür auf Datei und lade weitere Bilder, welche zu
-                                    Testzwecken dienen, hoch.</li>
-                                <li class="text-left">Spiele ein wenig mit den Einstellungen unter „erweitert“
-                                    herum – was fällt auf? Kann das Modell verbessert werden?</li>
-                            </ul>
-                        </v-col>
-                        <v-col cols="12" md="6">
-                            <v-img src="@/assets/teachable_machine_screenshot_2.png" aspect-ratio="1.3">
-                                <template v-slot:placeholder>
-                                    <v-row class="fill-height ma-0" align="center" justify="center">
-                                        <v-progress-circular indeterminate color="white"></v-progress-circular>
-                                    </v-row>
-                                </template>
-                            </v-img>
-                        </v-col>
-                    </v-row>
-                </v-container>
+            Bitte lade hier deine Testbilder hoch, mit denen du deine KI Qualitativ austesten moechtest.
+            <upload-images-for-class class_name='Testbilder' :available_images='test_bilder'/>
+
+            <div v-for="test_bild in test_bilder">
+            <rendered-prediction :input_image="test_bild" prediction="Vorfahrtsstra&szlig;e erkannt (64%)"/>
+            </div>
             </v-expansion-panel-text>
         </v-expansion-panel>
 
@@ -84,8 +94,39 @@
         </v-expansion-panel>
 
     </v-expansion-panels>
+
+    <v-dialog v-model="show" width="90%" height="90%">
+    <v-card>
+        <div v-for="f in selected_images">
+            <rendered-prediction :input_image="f" prediction="Vorfahrtsstra&szlig;e erkannt (64%)"/>
+        </div>
+    </v-card>
+    </v-dialog>
 </template>
 
-<script lang="ts" setup>
-import File from "./UploadFile.vue"
+<script lang="ts">
+import UploadImagesForClass from '@/components/UploadImagesForClass.vue'
+import RenderedPrediction from '@/components/RenderedPrediction.vue'
+import someImage from '@/assets/result-fail.png'
+
+export default {
+  components: {UploadImagesForClass, RenderedPrediction},
+  data: () => ({
+    items: [
+        {'Name': "Geheime KI", 'Korrekt': '78 von 100'},
+        {'Name': "Dagobert Duck", 'Korrekt': '76 von 100'},
+        {'Name': "Deine KI", 'Korrekt': '75 von 100'},
+        {'Name': "Maik's KI", 'Korrekt': '56 von 100'},
+        {'Name': "Luisa's KI", 'Korrekt': '34 von 100'}
+    ],
+    show: false,
+    test_bilder: [],
+    selected_images: [
+        {'src': someImage},
+        {'src': someImage},
+        {'src': someImage},
+        {'src': someImage},
+    ]
+  })
+}
 </script>

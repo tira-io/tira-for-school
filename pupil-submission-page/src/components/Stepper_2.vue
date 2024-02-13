@@ -4,7 +4,7 @@
     </p>
     <upload-images-for-class class_name='Vorfahrtsstra&szlig;e' :available_images='klasse_vorfahrt_strasse'/>
     <br>
-    <upload-images-for-class class_name='Vorfahrt Gew&auml;ren' :available_images='klasse_vorfahrt_gewaehren'/>
+    <upload-images-for-class class_name='Vorfahrt Gew&auml;hren' :available_images='klasse_vorfahrt_gewaehren'/>
 </template>
 
 <script lang="ts">
