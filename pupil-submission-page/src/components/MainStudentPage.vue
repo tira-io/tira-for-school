@@ -4,7 +4,7 @@
 
         <template v-slot:item.2 :rules="[() => false]" error="tmp"><Stepper_2 :klasse_vorfahrt_strasse="klasse_vorfahrt_strasse" :klasse_vorfahrt_gewaehren="klasse_vorfahrt_gewaehren"/></template>
 
-        <template v-slot:item.3><Stepper_3/></template>
+        <template v-slot:item.3><Stepper_3 @model-trained="modelTrained"/></template>
 
         <template v-slot:item.4><Stepper_4/></template>
 
@@ -23,14 +23,24 @@ export default {
     klasse_vorfahrt_strasse: [],
     klasse_vorfahrt_gewaehren: [],
     step: '0',
+    model_in_progress: null,
   }),
   computed: {
     stepper_navigation_state() {
         if (this.step == '2' && (this.klasse_vorfahrt_strasse.length <= 0 || this.klasse_vorfahrt_gewaehren.length <= 0)) {
-            return 'next';
+          return 'next'
+        }
+
+        if (this.step == '3' && !this.model_in_progress) {
+          return 'next'
         }
 
         return false;
+    }
+  },
+  methods: {
+    modelTrained(model) {
+      this.model_in_progress = model
     }
   }
 }

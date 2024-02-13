@@ -1,8 +1,17 @@
-<script lang="ts" setup>
-import File from "./UploadFile.vue"
-</script>
-
 <template>
+    <v-card class="mx-auto" max-width="500" min-height="500" image="@/assets/result-fail.png" title="Deine KI war in" theme="dark">
+        <v-card-text class="py-0">
+            <v-row align="center" no-gutters>
+                <v-col class="text-h2" style="color: red;" cols="8">75 von 100</v-col>
+            </v-row>
+            <br>
+            Beispielen korrekt.
+        </v-card-text>
+    </v-card>
+    <br>
+    Trotzdem ist noch kein Meister vom Himmel gefallen. Eine KI wird in der Regel durch Quantitative Tests, bei denen X, und qualitative Tets, bei denen Y, getestet und kontinuierlich verbessert. Schaue doch mal in x, y, und Z, und schaue, ob du mit diesem Feedback deine KI weiter verbessern kannst.
+    <br><br>
+
     <v-expansion-panels>
         <v-expansion-panel title="Mengen-Tests">
             <v-expansion-panel-text>
@@ -76,3 +85,7 @@ import File from "./UploadFile.vue"
 
     </v-expansion-panels>
 </template>
+
+<script lang="ts" setup>
+import File from "./UploadFile.vue"
+</script>
