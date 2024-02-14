@@ -36,12 +36,14 @@
 </template>
 
 <script lang="ts">
+import {load_model} from '@/training.ts'
 
 function Sleep(milliseconds) {
 return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
 
 export default {
+  props: ['klasse_vorfahrt_strasse' , 'klasse_vorfahrt_gewaehren'],
   data: () => ({
     cols: 2,
     epochs: 50,
@@ -51,12 +53,36 @@ export default {
   }),
   methods: {
     async train() {
+      let model = await load_model()
+
       for (let i=1; i< 100; i++) {
         this.training_progress = i
-        await Sleep(75)
+
+        for (let class_0 of this.klasse_vorfahrt_strasse) {
+          model.train(class_0.src, 0)
+        }
+
+        for (let class_1 of this.klasse_vorfahrt_gewaehren) {
+          model.train(class_1.src, 1)
+        }
+
+        await Sleep(1)
       }
+
+      for (let class_0 of this.klasse_vorfahrt_strasse) {
+        let prediction = await model.predict(class_0.src)
+        console.log('Class 0: ' + prediction.classIndex)
+        console.log(prediction.confidences)
+      }
+
+      for (let class_1 of this.klasse_vorfahrt_gewaehren) {
+        let prediction = await model.predict(class_1.src)
+        console.log('Class 1: ' + prediction.classIndex)
+        console.log(prediction.confidences)
+      }
+
       this.training_progress = 0
-      this.$emit('model-trained', {'tmp': '1'})
+      this.$emit('model-trained', {'tmp': '1', 'model': model})
     }
   }
 }

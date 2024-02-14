@@ -4,7 +4,7 @@
 
         <template v-slot:item.2 :rules="[() => false]" error="tmp"><Stepper_2 :klasse_vorfahrt_strasse="klasse_vorfahrt_strasse" :klasse_vorfahrt_gewaehren="klasse_vorfahrt_gewaehren"/></template>
 
-        <template v-slot:item.3><Stepper_3 @model-trained="modelTrained"/></template>
+        <template v-slot:item.3><Stepper_3 @model-trained="modelTrained" :klasse_vorfahrt_strasse="klasse_vorfahrt_strasse" :klasse_vorfahrt_gewaehren="klasse_vorfahrt_gewaehren"/></template>
 
         <template v-slot:item.4><Stepper_4/></template>
 
