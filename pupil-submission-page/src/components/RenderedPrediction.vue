@@ -1,6 +1,6 @@
 <template>
     <v-row justify="center" align="center">
-        <v-col cols="4"><v-img :src="input_image.src" style="width: 100%;"/></v-col>
+        <v-col cols="4"><v-img :src="input_image.src" style="margin: 0 auto" width="250"/></v-col>
         <v-col cols="4"><v-img src="@/assets/prediction-with-ki.png" style="width: 100%"/></v-col>
         <v-col cols="4"><Bar :data="chartData" :options="chartOptions" /></v-col>
     </v-row>
