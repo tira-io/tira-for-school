@@ -143,11 +143,10 @@ export default {
     methods: {
         async make_some_predictions() {
             this.test_predictions = []
-            console.log('fff')
             for (let i of this.test_bilder) {
                 this.test_predictions.push({
                     'src': i,
-                    'prediction': await model.predict(i)
+                    'prediction': await model.predict(i.src)
                 })
             }
         }
