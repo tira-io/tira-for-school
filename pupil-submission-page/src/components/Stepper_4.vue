@@ -77,9 +77,9 @@
         <v-expansion-panel title="Qualititative Tests">
             <v-expansion-panel-text>
             Bitte lade hier deine Testbilder hoch, mit denen du deine KI Qualitativ austesten moechtest.
-            <upload-images-for-class class_name='Testbilder' :available_images='test_bilder'/>
+            <upload-images-for-class class_name='Testbilder' :available_images='test_bilder' @update="make_some_predictions"/>
 
-            <div v-for="test_bild in test_bilder_with_prediction">
+            <div v-for="test_bild in test_predictions">
             <rendered-prediction :input_image="test_bild.src" prediction="test_bild.prediction"/>
             </div>
             </v-expansion-panel-text>
@@ -108,11 +108,11 @@
 import UploadImagesForClass from '@/components/UploadImagesForClass.vue'
 import RenderedPrediction from '@/components/RenderedPrediction.vue'
 import someImage from '@/assets/result-fail.png'
-import model from '@/training.ts'
+import {model} from '@/training.ts'
 
 export default {
   components: {UploadImagesForClass, RenderedPrediction},
-  props: ['trained_model'],
+  props: ['model'],
   data: () => ({
     items: [
         {'Name': "Geheime KI", 'Korrekt': '78 von 100'},
@@ -123,6 +123,7 @@ export default {
     ],
     show: false,
     test_bilder: [],
+    test_predictions: [],
     selected_images: [
         {'src': someImage},
         {'src': someImage},
@@ -130,6 +131,18 @@ export default {
         {'src': someImage},
     ]
   }),
+ methods: {
+    async make_some_predictions() {
+      this.test_predictions = []
+      console.log('fff')
+      for (let i of this.test_bilder) {
+        this.test_predictions.push({
+          'src': i,
+          'prediction': await model.predict(i)
+        })
+      }
+    }
+  },
   computed: {
     image_count() {
       return this.model['categories']['correct-0-predicted-0'].length + this.model['categories']['correct-0-predicted-1'].length + 
@@ -139,16 +152,6 @@ export default {
     correct() {
          return this.model['categories']['correct-0-predicted-0'].length + this.model['categories']['correct-1-predicted-1'].length;
     },
-    async test_bilder_with_prediction() {
-        let ret = []
-
-        for (let test_bild of this.test_bilder) {
-            let prediction = await this.model.predict(test_bild.src)
-            //ret.push({'src': test_bild, 'prediction': JSON.stringify(prediction)})
-        }
-
-        return ret
-    }
   }
 }
 </script>
