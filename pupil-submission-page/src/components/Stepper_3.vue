@@ -31,28 +31,37 @@
                     </v-row>
                 </v-expansion-panel-text>
             </v-expansion-panel>
+
+
+            <v-expansion-panel title="Debugging">
+                <v-expansion-panel-text>
+                    <upload-images-for-class class_name='Testbilder' :available_images='test_bilder' @update="make_some_predictions"/>
+                    <div v-for="test_prediction in test_predictions">
+                      <rendered-prediction :input_image="test_prediction.src" :prediction="test_prediction.prediction"/>
+                    </div>
+                </v-expansion-panel-text>
+               </v-expansion-panel> 
         </v-expansion-panels>
     </v-card>
 
-    <upload-images-for-class class_name='Testbilder' :available_images='test_bilder'/>
-    {{predictions}}
+
 </template>
 
 <script lang="ts">
-import {load_model} from '@/training.ts'
-import {yield_images, priority_images} from '@/datasets.ts'
+import {create_model, model} from '@/training.ts'
+import {vorfahrt_strasse_images, vorfahrt_gewaehren_images, label_vorfahrt_strasse, label_vorfahrt_gewaehren} from '@/datasets.ts'
 import someImage from '@/assets/result-fail.png'
 import UploadImagesForClass from '@/components/UploadImagesForClass.vue'
+import RenderedPrediction from '@/components/RenderedPrediction.vue'
 
 function Sleep(milliseconds) {
-return new Promise(resolve => setTimeout(resolve, milliseconds));
+  return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
-
-let model = null
 
 export default {
   props: ['klasse_vorfahrt_strasse' , 'klasse_vorfahrt_gewaehren'],
-  components: {UploadImagesForClass},
+  emits: ['model-trained'],
+  components: {UploadImagesForClass, RenderedPrediction},
   data: () => ({
     cols: 2,
     epochs: 2,
@@ -60,20 +69,20 @@ export default {
     learning_rate: 0.001,
     training_progress: 0,
     test_bilder: [],
+    test_predictions: [],
   }),
   methods: {
     async train() {
-      model = await load_model()
-      console.log(model)
+      await create_model()
       let training_data = []
 
       for (let epoch =0; epoch < this.epochs; epoch ++) {
         for (let class_0 of this.klasse_vorfahrt_strasse) {
-          training_data.push({'img': class_0.src, 'label': 0})
+          training_data.push({'img': class_0.src, 'label': label_vorfahrt_strasse})
         }
 
         for (let class_1 of this.klasse_vorfahrt_gewaehren) {
-          training_data.push({'img': class_1.src, 'label': 1})
+          training_data.push({'img': class_1.src, 'label': label_vorfahrt_gewaehren})
         }
       }
 
@@ -104,24 +113,21 @@ export default {
 
       console.log('Correct ' + c + ' False: ' + f)
 
-      for (let i=0; i< priority_images.length; i++) {
-        let priority_image = priority_images[i]
-        let prediction = await model.predict(priority_image)
+      for (let i=0; i< vorfahrt_strasse_images.length; i++) {
+        let vorfahrt_strasse_image = vorfahrt_strasse_images[i]
+        let prediction = await model.predict(vorfahrt_strasse_image)
 
-        this.training_progress = parseInt(Math.max(((i/priority_images.length)*25)+50, 50))
-        /*console.log('Class 1 (test): ' + prediction.classIndex)
-        console.log(prediction.confidences)*/
-        categories['correct-1-predicted-' + prediction.classIndex].push({'src': priority_image})
+        this.training_progress = parseInt(Math.max(((i/vorfahrt_strasse_images.length)*25)+50, 50))
+
+        categories['correct-' + label_vorfahrt_strasse + '-predicted-' + prediction.classIndex].push({'src': vorfahrt_strasse_image})
       }
 
-      for (let i=0; i< yield_images.length; i++) {
-        let yield_image = yield_images[i]
-        let prediction = await model.predict(yield_image)
-        this.training_progress = parseInt(Math.max(((i/yield_images.length)*25)+75, 75))
-        /*console.log('Class 0 (test): ' + prediction.classIndex)
-        console.log(prediction.confidences)*/
+      for (let i=0; i< vorfahrt_gewaehren_images.length; i++) {
+        let vorfahrt_gewaehren_image = vorfahrt_gewaehren_images[i]
+        let prediction = await model.predict(vorfahrt_gewaehren_image)
+        this.training_progress = parseInt(Math.max(((i/vorfahrt_gewaehren_images.length)*25)+75, 75))
 
-        categories['correct-0-predicted-' + prediction.classIndex].push({'src': yield_image})
+        categories['correct-' + label_vorfahrt_gewaehren + '-predicted-' + prediction.classIndex].push({'src': vorfahrt_gewaehren_image})
       }
 
       this.training_progress = 0
@@ -131,20 +137,18 @@ export default {
       console.log('correct-1-predicted-1:' + categories['correct-1-predicted-1'].length)
       //let t = await model.predict(someImage)
       //console.log(t)
-      this.$emit('model-trained', {'tmp': '1', 'model': this.model, 'categories': categories})
+      this.$emit('model-trained', {'tmp': '1', 'model': model, 'categories': categories})
+    },
+    async make_some_predictions() {
+      this.test_predictions = []
+      console.log('fff')
+      for (let i of this.test_bilder) {
+        this.test_predictions.push({
+          'src': i,
+          'prediction': await model.predict(i)
+        })
+      }
     }
   },
-  computed: {
-    async predictions() {
-      for (let i of this.test_bilder) {
-
-        let prediction = await model.predict(i)
-        console.log(i)
-        console.log(prediction)
-      }
-
-      return 'tvd'
-    }
-  }
 }
 </script>

@@ -35,6 +35,7 @@
 <script lang="ts">
 export default {
   props: ['class_name', 'available_images'],
+  emits: ['update'],
   data: () => ({
     to_upload: null,
     cols: 2
@@ -71,6 +72,7 @@ export default {
         }
 
         this.to_upload = []
+        this.$emit('update')
     }
   }
 }

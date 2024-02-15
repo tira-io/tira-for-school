@@ -5,43 +5,45 @@ import * as knnClassifier from '@tensorflow-models/knn-classifier';
 let mobileNetPromise = mobilenetModule.load()
 let mobileNet: any = null;
 
-export async function load_model() {
+class Model {
+  mobileNet: any
+  knn: any
+
+  constructor() {
+    this.mobileNet = mobileNet
+    this.knn = knnClassifier.create();
+  }
+
+  infer_with_mobilenet(img_src: string) {
+    const img = new Image()
+    img.src = img_src;
+    img.width = 227
+    img.height = 227
+
+    return this.mobileNet.infer(tf.browser.fromPixels(img), 'conv_preds')
+  }
+
+  async train(image: string, class_id: 0|1) {
+    const infer = this.infer_with_mobilenet(image)
+    await this.knn.addExample(infer, class_id)
+  }
+
+  async predict(image: string) {
+    const logits = this.infer_with_mobilenet(image)
+    const ret = await this.knn.predictClass(logits, 10)
+    return ret
+  }
+}
+
+export var model: Model|null = null
+
+export async function create_model() {
     if (mobileNet == null) {
       console.log('ToDo: Load Mobile net...')
       mobileNet = await mobileNetPromise
     }
 
-    class Main {
-      mobileNet: any
-      knn: any
-
-      constructor() {
-        this.mobileNet = mobileNet
-        this.knn = knnClassifier.create();
-      }
-
-      infer_with_mobilenet(img_src: string) {
-        const img = new Image()
-        img.src = img_src;
-        img.width = 227
-        img.height = 227
-
-        return this.mobileNet.infer(tf.browser.fromPixels(img), 'conv_preds')
-      }
-
-      async train(image: string, class_id: 0|1) {
-        const infer = this.infer_with_mobilenet(image)
-        await this.knn.addExample(infer, class_id)
-      }
-
-      async predict(image: string) {
-        const logits = this.infer_with_mobilenet(image)
-        const ret = await this.knn.predictClass(logits, 10)
-        return ret
-      }
-    }
-
-    return new Main()
+    model = new Model()
 }
 
 mobileNetPromise.then((mobilenet:any) => {
