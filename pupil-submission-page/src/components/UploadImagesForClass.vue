@@ -27,7 +27,7 @@
         </template>
 
         <v-card-actions>
-            <v-btn @click="available_images=[]">Auswahl L&ouml;schen</v-btn>
+            <v-btn @click="clean">Auswahl L&ouml;schen</v-btn>
         </v-card-actions>
     </v-card>
 </template>
@@ -73,6 +73,15 @@ export default {
 
         this.to_upload = []
         this.$emit('update')
+    },
+    clean() {
+      this.to_upload=[];
+
+      for(let i=1;i<1000; i++) {
+        this.available_images.pop()
+      }
+
+      this.update_files()
     }
   }
 }
