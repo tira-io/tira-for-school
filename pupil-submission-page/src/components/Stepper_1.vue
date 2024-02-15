@@ -8,7 +8,7 @@
             </template>
         </v-img>
         <div class="text-center">
-            <v-btn @click="downloadMyPdf" color="blue" class="mt-5">Download Aufgabe</v-btn>
+            <v-row><v-col cols="4"/><v-col cols="4"><v-btn @click="downloadMyPdf" color="blue" class="mt-5" block>Download Aufgabe</v-btn></v-col></v-row>
         </div>
     </v-card>
 </template>
