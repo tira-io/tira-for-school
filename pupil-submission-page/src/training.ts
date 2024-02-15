@@ -5,7 +5,6 @@ import * as knnClassifier from '@tensorflow-models/knn-classifier';
 let mobileNetPromise = mobilenetModule.load()
 let mobileNet: any = null;
 
-
 export async function load_model() {
     if (mobileNet == null) {
       console.log('ToDo: Load Mobile net...')
@@ -30,9 +29,9 @@ export async function load_model() {
         return this.mobileNet.infer(tf.browser.fromPixels(img), 'conv_preds')
       }
 
-      train(image: string, class_id: 0|1) {
+      async train(image: string, class_id: 0|1) {
         const infer = this.infer_with_mobilenet(image)
-        this.knn.addExample(infer, class_id)
+        await this.knn.addExample(infer, class_id)
       }
 
       async predict(image: string) {

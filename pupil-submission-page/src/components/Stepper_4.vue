@@ -2,7 +2,7 @@
     <v-card class="mx-auto" max-width="500" min-height="500" @click="show=true;" image="@/assets/result-fail.png" title="Deine KI war in" theme="dark">
         <v-card-text class="py-0">
             <v-row align="center" no-gutters>
-                <v-col class="text-h2" style="color: red;" cols="8">75 von 100</v-col>
+                <v-col class="text-h2" style="color: red;" cols="8">{{correct}} von {{image_count}}</v-col>
             </v-row>
             <br>
             Beispielen korrekt.
@@ -79,8 +79,8 @@
             Bitte lade hier deine Testbilder hoch, mit denen du deine KI Qualitativ austesten moechtest.
             <upload-images-for-class class_name='Testbilder' :available_images='test_bilder'/>
 
-            <div v-for="test_bild in test_bilder">
-            <rendered-prediction :input_image="test_bild" prediction="Vorfahrtsstra&szlig;e erkannt (64%)"/>
+            <div v-for="test_bild in test_bilder_with_prediction">
+            <rendered-prediction :input_image="test_bild.src" prediction="test_bild.prediction"/>
             </div>
             </v-expansion-panel-text>
         </v-expansion-panel>
@@ -108,9 +108,11 @@
 import UploadImagesForClass from '@/components/UploadImagesForClass.vue'
 import RenderedPrediction from '@/components/RenderedPrediction.vue'
 import someImage from '@/assets/result-fail.png'
+import model from '@/training.ts'
 
 export default {
   components: {UploadImagesForClass, RenderedPrediction},
+  props: ['trained_model'],
   data: () => ({
     items: [
         {'Name': "Geheime KI", 'Korrekt': '78 von 100'},
@@ -127,6 +129,26 @@ export default {
         {'src': someImage},
         {'src': someImage},
     ]
-  })
+  }),
+  computed: {
+    image_count() {
+      return this.model['categories']['correct-0-predicted-0'].length + this.model['categories']['correct-0-predicted-1'].length + 
+      this.model['categories']['correct-1-predicted-0'].length + 
+      this.model['categories']['correct-1-predicted-1'].length;
+    },
+    correct() {
+         return this.model['categories']['correct-0-predicted-0'].length + this.model['categories']['correct-1-predicted-1'].length;
+    },
+    async test_bilder_with_prediction() {
+        let ret = []
+
+        for (let test_bild of this.test_bilder) {
+            let prediction = await this.model.predict(test_bild.src)
+            //ret.push({'src': test_bild, 'prediction': JSON.stringify(prediction)})
+        }
+
+        return ret
+    }
+  }
 }
 </script>

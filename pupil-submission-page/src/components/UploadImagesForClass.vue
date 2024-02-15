@@ -27,7 +27,7 @@
         </template>
 
         <v-card-actions>
-            <v-btn @click="available_images=null">Auswahl L&ouml;schen</v-btn>
+            <v-btn @click="available_images=[]">Auswahl L&ouml;schen</v-btn>
         </v-card-actions>
     </v-card>
 </template>
@@ -70,7 +70,7 @@ export default {
             this.available_images.push({'src': URL.createObjectURL(file), 'file': file})
         }
 
-        this.to_upload = null
+        this.to_upload = []
     }
   }
 }
