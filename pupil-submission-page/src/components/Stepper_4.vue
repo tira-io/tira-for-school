@@ -80,7 +80,7 @@
             <upload-images-for-class class_name='Testbilder' :available_images='test_bilder' @update="make_some_predictions"/>
 
             <div v-for="test_bild in test_predictions">
-            <rendered-prediction :input_image="test_bild.src" prediction="test_bild.prediction"/>
+            <rendered-prediction :input_image="test_bild.src" :prediction="test_bild.prediction"/>
             </div>
             </v-expansion-panel-text>
         </v-expansion-panel>
