@@ -13,17 +13,17 @@ export async function tf_from_pixels(img_src: string) {
     img.height = 227
 
     if(img.complete && img.naturalHeight !== 0) {
-      resolve(tf.fromPixels(img))
+      resolve(tf.browser.fromPixels(img))
     } else {
       img.onload = () => {
-        resolve(tf.fromPixels(img))
+        resolve(tf.browser.fromPixels(img))
       }
     }
   })
 }
 
 export function tf_to_pixels(tensor: any) {
-  return tf.toPixels(tensor)
+  return tf.browser.toPixels(tensor)
 }
 
 class Model {
