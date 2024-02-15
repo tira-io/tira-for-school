@@ -19,7 +19,8 @@
     "vue-pdf": "^4.3.0",
     "vue-router": "^4.2.5",
     "vuetify": "^3.5.1",
-    "npm": "*"
+    "npm": "*",
+    "vue-chartjs": "^5.3.0"
   },
   "devDependencies": {
     "@babel/types": "^7.21.4",
