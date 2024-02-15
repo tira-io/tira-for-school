@@ -22,7 +22,7 @@
                         <v-card class="mx-auto" @click="show=true;" style="width: 100%" image="@/assets/result-win.png" title="Deine KI hat " theme="dark">
                             <v-card-text class="py-0">
                                 <v-row align="center" no-gutters>
-                                    <v-col class="text-h2" style="color: red;" cols="8">91</v-col>
+                                    <v-col class="text-h2" style="color: red;" cols="8">{{true_positive_count}}</v-col>
                                 </v-row>
                                 <br>
                                 "Vorfahrt gew&auml;hren" Schilder korrekt erkannt.
@@ -34,10 +34,10 @@
                         <v-card class="mx-auto" @click="show=true;" style="width: 100%" image="@/assets/result-win.png" title="Deine KI hat " theme="dark">
                             <v-card-text class="py-0">
                                 <v-row align="center" no-gutters>
-                                    <v-col class="text-h2" style="color: red;" cols="8">23</v-col>
+                                    <v-col class="text-h2" style="color: red;" cols="8">{{false_positive_count}}</v-col>
                                 </v-row>
                                 <br>
-                                "Vorfahrt gew&auml;hren" Schilder f&auml;lschlich als Vorfahrtsstra&szlig;e erkannt.
+                                Vorfahrtsstra&szlig;e Schilder f&auml;lschlich als "Vorfahrt gew&auml;hren" erkannt.
                             </v-card-text>
                         </v-card>
                     </v-col>
@@ -48,7 +48,7 @@
                         <v-card class="mx-auto" @click="show=true;" style="width: 100%" image="@/assets/result-win.png" title="Deine KI hat " theme="dark">
                             <v-card-text class="py-0">
                                 <v-row align="center" no-gutters>
-                                    <v-col class="text-h2" style="color: red;" cols="8">32</v-col>
+                                    <v-col class="text-h2" style="color: red;" cols="8">{{false_negative_count}}</v-col>
                                 </v-row>
                                 <br>
                                 "Vorfahrt gew&auml;hren" Schilder f&auml;lschlich als Vorfahrtsstra&szlig;e erkannt.
@@ -60,10 +60,10 @@
                         <v-card class="mx-auto" @click="show=true;" style="width: 100%" image="@/assets/result-win.png" title="Deine KI hat " theme="dark">
                             <v-card-text class="py-0">
                                 <v-row align="center" no-gutters>
-                                    <v-col class="text-h2" style="color: red;" cols="8">87</v-col>
+                                    <v-col class="text-h2" style="color: red;" cols="8">{{true_negative_count}}</v-col>
                                 </v-row>
                                 <br>
-                                "Vorfahrt gew&auml;hren" Schilder korrekt erkannt.
+                                Vorfahrtsstra&szlig;e Schilder korrekt erkannt.
                             </v-card-text>
                         </v-card>
                     </v-col>
@@ -109,6 +109,7 @@ import UploadImagesForClass from '@/components/UploadImagesForClass.vue'
 import RenderedPrediction from '@/components/RenderedPrediction.vue'
 import someImage from '@/assets/result-fail.png'
 import {model} from '@/training.ts'
+import {label_vorfahrt_strasse, label_vorfahrt_gewaehren} from '@/datasets.ts'
 
 export default {
   components: {UploadImagesForClass, RenderedPrediction},
@@ -150,7 +151,19 @@ export default {
       this.model['categories']['correct-1-predicted-1'].length;
     },
     correct() {
-         return this.model['categories']['correct-0-predicted-0'].length + this.model['categories']['correct-1-predicted-1'].length;
+      return this.model['categories']['correct-0-predicted-0'].length + this.model['categories']['correct-1-predicted-1'].length;
+    },
+    true_positive_count() {
+      return this.model['categories']['correct-' + label_vorfahrt_gewaehren + '-predicted-' + label_vorfahrt_gewaehren].length
+    },
+    false_positive_count() {
+      return this.model['categories']['correct-' + label_vorfahrt_strasse + '-predicted-' + label_vorfahrt_gewaehren].length
+    },
+    true_negative_count() {
+      return this.model['categories']['correct-' + label_vorfahrt_strasse + '-predicted-' + label_vorfahrt_strasse].length
+    },
+    false_negative_count() {
+      return this.model['categories']['correct-' + label_vorfahrt_gewaehren + '-predicted-' + label_vorfahrt_strasse].length
     },
   }
 }

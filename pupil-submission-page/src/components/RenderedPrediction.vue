@@ -27,8 +27,8 @@ export default {
       return {
         labels: [ 'Vorfahrtsstra&szlig;e', 'Vorfahrt Gew&auml;hren'],
         datasets: [
-          { label: 'Vorfahrtsstra&szlig;e', backgroundColor: '#f87979', data: [this.prediction['confidences'][label_vorfahrt_strasse]*100, 0]},
-          { label: 'Vorfahrt Gew&auml;hren', backgroundColor: '#4F7942', data: [0, this.prediction['confidences'][label_vorfahrt_gewaehren]*100] }
+          {label: 'Vorfahrtsstra&szlig;e', backgroundColor: '#f87979', data: [this.prediction['confidences'][label_vorfahrt_strasse]*100, 0]},
+          {label: 'Vorfahrt Gew&auml;hren', backgroundColor: '#4F7942', data: [0, this.prediction['confidences'][label_vorfahrt_gewaehren]*100] }
         ]
       }
     }
