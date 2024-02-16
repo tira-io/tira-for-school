@@ -18,7 +18,15 @@
           </li>
         </ul>
       </v-col>
-      <v-col cols="4"> Bild einfügen </v-col>
+      <v-col cols="4">
+        <v-img src="@/assets/TaskBild.png" aspect-ratio="2.75">
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular indeterminate color="white"></v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
+      </v-col>
     </v-row>
     <br />
     <ul>
