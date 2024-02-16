@@ -50,7 +50,7 @@
 
                 <v-row>
                     <v-col cols="6">
-                        <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/result-win.png"
+                        <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/y_false.png"
                             title="Deine KI hat " theme="dark">
                             <v-card-text class="py-0">
                                 <v-row align="center" no-gutters>

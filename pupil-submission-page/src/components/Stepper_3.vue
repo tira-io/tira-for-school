@@ -13,6 +13,10 @@
     <v-expansion-panels v-if="training_progress == 0">
       <v-expansion-panel title="Erweiterte Einstellungen">
         <v-expansion-panel-text>
+          <p>
+            Hier kannst du dein Modell weiter verändern, um es zu verbessern.<br />
+            Lasse vorerst alles so wie es ist, du kommst später nochmal zurück.
+          </p>
           <v-row>
             <v-col cols="12">
               <v-text-field v-model="epochs" :rules="numberRules" label="Epochen"
@@ -39,10 +43,6 @@
 
       <v-expansion-panel title="Debugging">
         <v-expansion-panel-text>
-          <p>
-            Hier kannst du dein Modell weiter verändern, um es zu verbessern.<br />
-            Lasse vorerst alles so wie es ist, du kommst später nochmal zurück.
-          </p>
           <upload-images-for-class title='Testbilder' :available_images='test_bilder'
             description="Bitte f&uuml;ge bilder zum testen ein." @update="make_some_predictions" />
           <div v-for="test_prediction in test_predictions">
