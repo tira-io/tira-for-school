@@ -12,7 +12,7 @@
             <span class="custom-text">Testfällen korrekt.</span>
         </v-card-text>
     </v-card>
-    <v-card v-else-if="image_count - correct <= 20" class="mx-auto" max-width="500" min-height="500" @click="show = true;"
+    <v-card v-else-if="image_count - correct <= 20" class="mx-auto" min-width="500" max-height="500" @click="show = true;"
         image="@/assets/car_accident2.jpg" theme="dark">
         <v-card-title>
             <span class="custom-text">Deine KI war in</span>
@@ -93,7 +93,7 @@
                         </v-card>
                     </v-col>
                     <v-col cols="5">
-                        <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/y_true.png"
+                        <v-card flat class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/y_true.png"
                             theme="dark">
                             <v-card-title>
                                 <span class="custom-text">Deine KI hat </span>
@@ -109,7 +109,7 @@
                     </v-col>
 
                     <v-col cols="5">
-                        <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/p_false.png"
+                        <v-card flat class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/p_false.png"
                             theme="dark">
                             <v-card-title>
                                 <span class="custom-text">Deine KI hat </span>
@@ -134,7 +134,7 @@
                         </v-card>
                     </v-col>
                     <v-col cols="5">
-                        <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/y_false.png"
+                        <v-card flat class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/y_false.png"
                             theme="dark">
                             <v-card-title>
                                 <span class="custom-text">Deine KI hat </span>
@@ -151,7 +151,7 @@
                     </v-col>
 
                     <v-col cols="5">
-                        <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/p_true.png"
+                        <v-card flat class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/p_true.png"
                             theme="dark">
                             <v-card-title>
                                 <span class="custom-text">Deine KI hat </span>
@@ -166,11 +166,6 @@
                         </v-card>
                     </v-col>
                 </v-row>
-                <br>
-                Du kannst hier zusätzlich deine KI mit denen deiner Mitschülerinnen und Mitschülern vergleichen.<br>
-                Wer hat die beste KI erstellt und was macht diese besser als die anderen?
-                <br>
-                <v-data-table :items="items" />
             </v-expansion-panel-text>
         </v-expansion-panel>
 
@@ -208,6 +203,17 @@
                 </v-container>
                 <br>
                 <v-btn color="primary" @click="$emit('change-step', 2)">Zurück zu Schritt 2</v-btn>
+            </v-expansion-panel-text>
+        </v-expansion-panel>
+
+        <v-expansion-panel title="Deine KI im Vergleich zu anderen">
+            <v-expansion-panel-text>
+                <v-container class="ma-3">
+                    Du kannst hier deine KI mit denen deiner Mitschülerinnen und Mitschülern vergleichen.<br>
+                    Wer hat die beste KI erstellt und was macht diese besser als die anderen?
+                    <br>
+                    <v-data-table :items="items" />
+                </v-container>
             </v-expansion-panel-text>
         </v-expansion-panel>
 
@@ -292,4 +298,5 @@ export default {
     background-color: white;
     padding: 2px 4px;
     border-radius: 4px;
-}</style>
+}
+</style>
