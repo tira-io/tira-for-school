@@ -206,6 +206,8 @@
                         <li class="text-left">Schaffst du es in die Top 3 der KI's?</li>
                     </ul>
                 </v-container>
+                <br>
+                <v-btn color="primary" @click="$emit('change-step', 2)">Zurück zu Schritt 2</v-btn>
             </v-expansion-panel-text>
         </v-expansion-panel>
 
