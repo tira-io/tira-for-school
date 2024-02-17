@@ -39,17 +39,6 @@
           </v-row>
         </v-expansion-panel-text>
       </v-expansion-panel>
-
-
-      <v-expansion-panel title="Debugging">
-        <v-expansion-panel-text>
-          <upload-images-for-class title='Testbilder' :available_images='test_bilder'
-            description="Bitte f&uuml;ge bilder zum testen ein." @update="make_some_predictions" />
-          <div v-for="test_prediction in test_predictions">
-            <rendered-prediction :input_image="test_prediction.src" :prediction="test_prediction.prediction" />
-          </div>
-        </v-expansion-panel-text>
-      </v-expansion-panel>
     </v-expansion-panels>
   </v-card>
 </template>
