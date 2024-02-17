@@ -93,27 +93,34 @@
                         </v-card>
                     </v-col>
                     <v-col cols="5">
-                        <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/result-win.png"
-                            title="Deine KI hat " theme="dark">
+                        <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/y_true.png"
+                            theme="dark">
+                            <v-card-title>
+                                <span class="custom-text">Deine KI hat </span>
+                            </v-card-title>
                             <v-card-text class="py-0">
                                 <v-row align="center" no-gutters>
                                     <v-col class="text-h2" style="color: red;" cols="8">{{ true_positive_count }}</v-col>
                                 </v-row>
                                 <br>
-                                "Vorfahrt gew&auml;hren" Schilder korrekt erkannt.
+                                <span class="custom-text">"Vorfahrt gew&auml;hren" Schilder korrekt erkannt.</span>
                             </v-card-text>
                         </v-card>
                     </v-col>
 
                     <v-col cols="5">
-                        <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/result-win.png"
-                            title="Deine KI hat " theme="dark">
+                        <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/p_false.png"
+                            theme="dark">
+                            <v-card-title>
+                                <span class="custom-text">Deine KI hat </span>
+                            </v-card-title>
                             <v-card-text class="py-0">
                                 <v-row align="center" no-gutters>
                                     <v-col class="text-h2" style="color: red;" cols="8">{{ false_positive_count }}</v-col>
                                 </v-row>
                                 <br>
-                                Vorfahrtsstra&szlig;e Schilder f&auml;lschlich als "Vorfahrt gew&auml;hren" erkannt.
+                                <span class="custom-text">Vorfahrtsstra&szlig;e Schilder f&auml;lschlich als "Vorfahrt
+                                    gew&auml;hren" erkannt.</span>
                             </v-card-text>
                         </v-card>
                     </v-col>
@@ -128,33 +135,41 @@
                     </v-col>
                     <v-col cols="5">
                         <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/y_false.png"
-                            title="Deine KI hat " theme="dark">
+                            theme="dark">
+                            <v-card-title>
+                                <span class="custom-text">Deine KI hat </span>
+                            </v-card-title>
                             <v-card-text class="py-0">
                                 <v-row align="center" no-gutters>
                                     <v-col class="text-h2" style="color: red;" cols="8">{{ false_negative_count }}</v-col>
                                 </v-row>
                                 <br>
-                                "Vorfahrt gew&auml;hren" Schilder f&auml;lschlich als Vorfahrtsstra&szlig;e erkannt.
+                                <span class="custom-text">"Vorfahrt gew&auml;hren" Schilder f&auml;lschlich als
+                                    Vorfahrtsstra&szlig;e erkannt.</span>
                             </v-card-text>
                         </v-card>
                     </v-col>
 
                     <v-col cols="5">
-                        <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/result-win.png"
-                            title="Deine KI hat " theme="dark">
+                        <v-card class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/p_true.png"
+                            theme="dark">
+                            <v-card-title>
+                                <span class="custom-text">Deine KI hat </span>
+                            </v-card-title>
                             <v-card-text class="py-0">
                                 <v-row align="center" no-gutters>
                                     <v-col class="text-h2" style="color: red;" cols="8">{{ true_negative_count }}</v-col>
                                 </v-row>
                                 <br>
-                                Vorfahrtsstra&szlig;e Schilder korrekt erkannt.
+                                <span class="custom-text">Vorfahrtsstra&szlig;e Schilder korrekt erkannt.</span>
                             </v-card-text>
                         </v-card>
                     </v-col>
                 </v-row>
-
+                <br>
                 Du kannst hier zusätzlich deine KI mit denen deiner Mitschülerinnen und Mitschülern vergleichen.<br>
                 Wer hat die beste KI erstellt und was macht diese besser als die anderen?
+                <br>
                 <v-data-table :items="items" />
             </v-expansion-panel-text>
         </v-expansion-panel>
@@ -164,7 +179,8 @@
                 <v-container class="ma-3">
                     <ul>
                         <li class="text-left">Hier kannst du deine KI vor besondere Chanlanges stellen.</li>
-                        <li class="text-left">Lade dafür weitere Testbilder hoch, welche nicht Teil der Trainingsdaten sind.</li>
+                        <li class="text-left">Lade dafür weitere Testbilder hoch, welche nicht Teil der Trainingsdaten sind.
+                        </li>
                         <li class="text-left">Nun kannst du sehen, wie sicher sich die KI bei den Klassifikationen ist.</li>
                         <li class="text-left">Bei welchen Bildern hat deine KI besondere Schwierigkeiten?</li>
                     </ul>
@@ -182,8 +198,10 @@
             <v-expansion-panel-text>
                 <v-container class="ma-3">
                     <ul>
-                        <li class="text-left">Wenn du deine KI quantitativ und qualitativ getestet hast, musst du sie jetzt natürlcih verbessern.</li>
-                        <li class="text-left">Gehe dafür wieder zu Schritt 2 und baue deine Verbesserungsideen in den Datensatz ein.</li>
+                        <li class="text-left">Wenn du deine KI quantitativ und qualitativ getestet hast, musst du sie jetzt
+                            natürlcih verbessern.</li>
+                        <li class="text-left">Gehe dafür wieder zu Schritt 2 und baue deine Verbesserungsideen in den
+                            Datensatz ein.</li>
                         <li class="text-left">Hat deine KI vielleicht ein Problem mit einer bestimmten Klasse?</li>
                         <li class="text-left">Schaffst du es in die Top 3 der KI's?</li>
                     </ul>
@@ -272,5 +290,4 @@ export default {
     background-color: white;
     padding: 2px 4px;
     border-radius: 4px;
-}
-</style>
+}</style>
