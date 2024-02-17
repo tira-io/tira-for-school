@@ -1,6 +1,6 @@
 <template>
     <v-card v-if="image_count - correct <= 10" class="mx-auto" max-width="500" min-height="500" @click="show = true;"
-        image="@/assets/car-accident1.jpg" theme="dark">
+        image="@/assets/car_accident1.jpg" theme="dark">
         <v-card-title>
             <span class="custom-text">Deine KI war in</span>
         </v-card-title>
@@ -13,7 +13,7 @@
         </v-card-text>
     </v-card>
     <v-card v-else-if="image_count - correct <= 20" class="mx-auto" max-width="500" min-height="500" @click="show = true;"
-        image="@/assets/car-accident2.jpg" theme="dark">
+        image="@/assets/car_accident2.jpg" theme="dark">
         <v-card-title>
             <span class="custom-text">Deine KI war in</span>
         </v-card-title>
@@ -26,7 +26,7 @@
         </v-card-text>
     </v-card>
     <v-card v-else-if="image_count - correct <= 50" class="mx-auto" max-width="500" min-height="500" @click="show = true;"
-        image="@/assets/car-accident3.jpg" theme="dark">
+        image="@/assets/car_accident3.jpg" theme="dark">
         <v-card-title>
             <span class="custom-text">Deine KI war in</span>
         </v-card-title>
@@ -38,7 +38,7 @@
             <span class="custom-text">Testfällen korrekt.</span>
         </v-card-text>
     </v-card>
-    <v-card v-else class="mx-auto" max-width="500" min-height="500" @click="show = true;" image="@/assets/car-accident4.jpg"
+    <v-card v-else class="mx-auto" max-width="500" min-height="500" @click="show = true;" image="@/assets/car_accident4.jpg"
         theme="dark">
         <v-card-title>
             <span class="custom-text">Deine KI war in</span>
