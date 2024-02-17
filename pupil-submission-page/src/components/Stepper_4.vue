@@ -1,12 +1,54 @@
 <template>
-    <v-card class="mx-auto" max-width="500" min-height="500" @click="show = true;" image="@/assets/result-fail.png"
-        title="Deine KI war in" theme="dark">
+    <v-card v-if="image_count - correct <= 10" class="mx-auto" max-width="500" min-height="500" @click="show = true;"
+        image="@/assets/car-accident1.jpg" theme="dark">
+        <v-card-title>
+            <span class="custom-text">Deine KI war in</span>
+        </v-card-title>
         <v-card-text class="py-0">
             <v-row align="center" no-gutters>
                 <v-col class="text-h2" style="color: red;" cols="8">{{ correct }} von {{ image_count }}</v-col>
             </v-row>
             <br>
-            Beispielen korrekt.
+            <span class="custom-text">Testfällen korrekt.</span>
+        </v-card-text>
+    </v-card>
+    <v-card v-else-if="image_count - correct <= 20" class="mx-auto" max-width="500" min-height="500" @click="show = true;"
+        image="@/assets/car-accident2.jpg" theme="dark">
+        <v-card-title>
+            <span class="custom-text">Deine KI war in</span>
+        </v-card-title>
+        <v-card-text class="py-0">
+            <v-row align="center" no-gutters>
+                <v-col class="text-h2" style="color: red;" cols="8">{{ correct }} von {{ image_count }}</v-col>
+            </v-row>
+            <br>
+            <span class="custom-text">Testfällen korrekt.</span>
+        </v-card-text>
+    </v-card>
+    <v-card v-else-if="image_count - correct <= 50" class="mx-auto" max-width="500" min-height="500" @click="show = true;"
+        image="@/assets/car-accident3.jpg" theme="dark">
+        <v-card-title>
+            <span class="custom-text">Deine KI war in</span>
+        </v-card-title>
+        <v-card-text class="py-0">
+            <v-row align="center" no-gutters>
+                <v-col class="text-h2" style="color: red;" cols="8">{{ correct }} von {{ image_count }}</v-col>
+            </v-row>
+            <br>
+            <span class="custom-text">Testfällen korrekt.</span>
+        </v-card-text>
+    </v-card>
+    <v-card v-else class="mx-auto" max-width="500" min-height="500" @click="show = true;" image="@/assets/car-accident4.jpg"
+        theme="dark">
+        <v-card-title>
+            <span class="custom-text">Deine KI war in</span>
+        </v-card-title>
+        <v-card-text class="py-0">
+            <v-row align="center" no-gutters>
+                <v-col class="text-h2" style="color: red;" cols="8">{{ correct }} von {{ image_count }}</v-col>
+            </v-row>
+            <br>
+            <span class="custom-text">Testfällen korrekt.</span>
         </v-card-text>
     </v-card>
     <br>
@@ -175,3 +217,12 @@ export default {
     }
 }
 </script>
+
+<style>
+.custom-text {
+    color: black;
+    background-color: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+</style>
