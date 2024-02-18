@@ -2,7 +2,7 @@
   <v-card flat>
 
     <div class="text-center">
-      <v-btn @click="train" color="blue" class="mt-5" :disabled="training_progress != 0">Trainiere Deine KI</v-btn>
+      <v-btn @click="train" color="blue" class="mt-5" :disabled="training_progress != 0">Trainiere deine KI</v-btn>
 
       <br><br>
       <v-progress-circular v-if="training_progress != 0" :rotate="0" :size="175" :width="25"
@@ -27,7 +27,7 @@
           <v-row>
             <v-col cols="12">
               <v-text-field v-model="batch_size" :rules="numberRules" label="Batchgr&ouml;&szlig;e"
-                hint="Ein Batch ist ein Satz an Beispielen, die f&uuml;r eine Trainings-Iteration verwendet werden. Wenn du beispielsweise 80 Bilder hast und als Batchgr&ouml;&szlig;e 16 w&auml;hlst, werden die Daten werden in 80/16 = 5 Batches aufgeteilt. Sobald alle f&ouml;nf Batches in das Modell eingegeben wurden, ist genau eine Epoche abgeschlossen. Diese Zahl musst du vermutlich nicht &auml;ndern, um gute Trainingsergebnisse zu erzielen." />
+                hint="Ein Batch ist ein Satz an Beispielen, die f&uuml;r eine Trainings-Iteration verwendet werden. Wenn du beispielsweise 80 Bilder hast und als Batchgr&ouml;&szlig;e 16 w&auml;hlst, werden die Daten werden in 80/16 = 5 Batches aufgeteilt. Sobald alle f&uuml;nf Batches in das Modell eingegeben wurden, ist genau eine Epoche abgeschlossen. Diese Zahl musst du vermutlich nicht &auml;ndern, um gute Trainingsergebnisse zu erzielen." />
             </v-col>
           </v-row>
 
@@ -72,7 +72,7 @@ export default {
           return true
         }
 
-        return 'bitte w&auml;hle eine Zahl gr&ouml;&szlig;er 0.'
+        return 'bitte wähle eine Zahl größer 0.'
       },
     ]
   }),
