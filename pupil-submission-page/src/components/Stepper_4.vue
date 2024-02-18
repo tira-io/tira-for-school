@@ -1,45 +1,6 @@
 <template>
-    <v-card v-if="image_count - correct <= 10" class="mx-auto" max-width="500" min-height="500" @click="show = true;"
-        image="@/assets/car_accident1.jpg" theme="dark">
-        <v-card-title>
-            <span class="custom-text">Deine KI war in</span>
-        </v-card-title>
-        <v-card-text class="py-0">
-            <v-row align="center" no-gutters>
-                <v-col class="text-h2" style="color: red;" cols="8">{{ correct }} von {{ image_count }}</v-col>
-            </v-row>
-            <br>
-            <span class="custom-text">Testfällen korrekt.</span>
-        </v-card-text>
-    </v-card>
-    <v-card v-else-if="image_count - correct <= 20" class="mx-auto" min-width="500" max-height="500" @click="show = true;"
-        image="@/assets/car_accident2.jpg" theme="dark">
-        <v-card-title>
-            <span class="custom-text">Deine KI war in</span>
-        </v-card-title>
-        <v-card-text class="py-0">
-            <v-row align="center" no-gutters>
-                <v-col class="text-h2" style="color: red;" cols="8">{{ correct }} von {{ image_count }}</v-col>
-            </v-row>
-            <br>
-            <span class="custom-text">Testfällen korrekt.</span>
-        </v-card-text>
-    </v-card>
-    <v-card v-else-if="image_count - correct <= 50" class="mx-auto" max-width="500" min-height="500" @click="show = true;"
-        image="@/assets/car_accident3.jpg" theme="dark">
-        <v-card-title>
-            <span class="custom-text">Deine KI war in</span>
-        </v-card-title>
-        <v-card-text class="py-0">
-            <v-row align="center" no-gutters>
-                <v-col class="text-h2" style="color: red;" cols="8">{{ correct }} von {{ image_count }}</v-col>
-            </v-row>
-            <br>
-            <span class="custom-text">Testfällen korrekt.</span>
-        </v-card-text>
-    </v-card>
-    <v-card v-else class="mx-auto" max-width="500" min-height="500" @click="show = true;" image="@/assets/car_accident4.jpg"
-        theme="dark">
+    <v-card class="mx-auto" max-width="500" min-height="500" @click="show = true;"
+        :image="header_image" theme="dark">
         <v-card-title>
             <span class="custom-text">Deine KI war in</span>
         </v-card-title>
@@ -100,7 +61,7 @@
                             </v-card-title>
                             <v-card-text class="py-0">
                                 <v-row align="center" no-gutters>
-                                    <v-col class="text-h2" style="color: red;" cols="8">{{ true_positive_count }}</v-col>
+                                    <v-col class="text-h2" style="color: green;" cols="8">{{ true_positive_count }}</v-col>
                                 </v-row>
                                 <br>
                                 <span class="custom-text">"Vorfahrt gew&auml;hren" Schilder korrekt erkannt.</span>
@@ -158,7 +119,7 @@
                             </v-card-title>
                             <v-card-text class="py-0">
                                 <v-row align="center" no-gutters>
-                                    <v-col class="text-h2" style="color: red;" cols="8">{{ true_negative_count }}</v-col>
+                                    <v-col class="text-h2" style="color: green;" cols="8">{{ true_negative_count }}</v-col>
                                 </v-row>
                                 <br>
                                 <span class="custom-text">Vorfahrtsstra&szlig;e Schilder korrekt erkannt.</span>
@@ -235,8 +196,14 @@ import someImage from '@/assets/result-fail.png'
 import { model } from '@/training.ts'
 import { label_vorfahrt_strasse, label_vorfahrt_gewaehren } from '@/datasets.ts'
 
+import car_accident1 from '@/assets/car_accident1.jpg';
+import car_accident2 from '@/assets/car_accident2.jpg';
+import car_accident3 from '@/assets/car_accident3.jpg';
+import car_accident4 from '@/assets/car_accident4.jpg';
+
 export default {
     components: { UploadImagesForClass, RenderedPrediction },
+    emits: ['change-step'],
     props: ['model'],
     data: () => ({
         items: [
@@ -268,6 +235,17 @@ export default {
         }
     },
     computed: {
+        header_image() {
+            if (this.image_count - this.correct <= 10) {
+                return car_accident1
+            } else if (this.image_count - this.correct <= 20) {
+                return car_accident2
+            } else if (this.image_count - this.correct <= 50) {
+                return car_accident3
+            } else {
+                return car_accident4
+            }
+        },
         image_count() {
             return this.model['categories']['correct-0-predicted-0'].length + this.model['categories']['correct-0-predicted-1'].length +
                 this.model['categories']['correct-1-predicted-0'].length +
