@@ -27,7 +27,7 @@
         </template>
 
         <v-card-actions>
-            <v-btn @click="clean">Auswahl L&ouml;schen</v-btn>
+            <v-btn @click="clean">Alle L&ouml;schen</v-btn>
         </v-card-actions>
     </v-card>
 </template>

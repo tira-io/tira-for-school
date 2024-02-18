@@ -167,6 +167,7 @@
             </v-expansion-panel-text>
         </v-expansion-panel>
 
+        <!--
         <v-expansion-panel title="Deine KI im Vergleich zu anderen">
             <v-expansion-panel-text>
                 <v-container class="ma-3">
@@ -177,6 +178,7 @@
                 </v-container>
             </v-expansion-panel-text>
         </v-expansion-panel>
+        -->
 
     </v-expansion-panels>
 
