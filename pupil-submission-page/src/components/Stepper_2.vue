@@ -17,7 +17,7 @@
         dann auf weiter, um deine KI zu trainieren.
       </v-col>
       <v-col cols="4">
-        <v-img src="@/assets/TaskBild.png">
+        <v-img src="@/assets/Foto.png">
           <template v-slot:placeholder>
             <v-row class="fill-height ma-0" align="center" justify="center">
               <v-progress-circular indeterminate color="white"></v-progress-circular>
