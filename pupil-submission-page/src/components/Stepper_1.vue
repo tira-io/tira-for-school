@@ -1,32 +1,31 @@
 <template>
     <v-card flat>
-        <v-img src="@/assets/TaskBild.png" aspect-ratio="2.75">
+
+        <v-row>
+        <v-col :cols="(12 - cols)/2"/>
+        <v-col :cols="cols">
+            <h2>Baue deine erste KI um Straßenschilder zu klassifizieren!</h2>
+            
+            Hier kannst du einem praktischen Beispiel lernen, wie eine KI gebaut wird.
+            Zusammen werden wir eine KI trainieren um Straßenschilder zu klassifizieren.
+            Sammle dazu mit deinen Mitschülerinnen und Mitschülern als Hausaufgabe ein paar Bilder von Vorfahrtsstraßen und Vorfahrt gewähren Schildern.
+            
+        </v-col>
+        </v-row>
+        
+
+        <v-row>
+        <v-col :cols="(12 - cols)/2"/>
+        <v-col :cols="cols">
+        <v-img src="@/assets/TaskBild.png" width="100%">
             <template v-slot:placeholder>
                 <v-row class="fill-height ma-0" align="center" justify="center">
                     <v-progress-circular indeterminate color="white"></v-progress-circular>
                 </v-row>
             </template>
         </v-img>
-
-        <v-card flat title="Willkommen auf dieser Webseite (Namen einfügen)">
-            <v-container>
-                <ul>
-                    <li>
-                        Hier kannst du lernen, wie eine Straßenschild-Klassifikation funktionieren kann.
-                    </li>
-                    <li>
-                        Um zu beginnen, brauchst du eine Datenbasis mit welcher du deine KI trainierst.
-                    </li>
-                    <li>
-                        Mache dafür mit deinen Mitschülerinnen und Mitschülern als Hausaufgabe ein paar Bilder von den zwei
-                        Straßenschilder-Arten.
-                    </li>
-                    <li>
-                        Nähere Informationen zu der <strong>Hausaufgabe</strong> findest du im Brief unseres Vorstandes.
-                    </li>
-                </ul>
-            </v-container>
-        </v-card>
+        </v-col>
+        </v-row>
 
         <div class="text-center">
             <v-row><v-col cols="3" />
@@ -39,6 +38,8 @@
   
 <script lang="ts">
 import pdfPath from '@/assets/StudentAufgabe.pdf';
+import trainingPath from '@/assets/training-data.zip';
+import { is_mobile } from "@/main";
 
 // Define the method
 const downloadMyPdf = () => {
@@ -53,6 +54,15 @@ export default {
     methods: {
         downloadMyPdf,
     },
+  computed: {
+    cols() {
+      if (is_mobile()) {
+        return 12;
+      } else {
+        return 8;
+      }
+    }
+  }
 };
 </script>
   
