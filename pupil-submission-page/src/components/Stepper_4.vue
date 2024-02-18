@@ -278,8 +278,17 @@ export default {
         selected_images() {
             let ret = []
             for (let i of this.examples_to_show) {
+                let examplesAdded = 0
                 for (let j of this.model['categories'][i]) {
                     ret.push(j)
+                    examplesAdded += 1;
+
+                    if (examplesAdded >= 1 && this.examples_to_show.length > 2) {
+                        break
+                    }
+                    if (examplesAdded > 4) {
+                        break
+                    }
                 }
             }
 
