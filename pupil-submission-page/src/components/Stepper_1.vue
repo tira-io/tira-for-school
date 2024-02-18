@@ -28,8 +28,8 @@
         </v-row>
 
         <div class="text-center">
-            <v-row><v-col cols="3" />
-                <v-col cols="6">
+            <v-row><v-col :cols="(12 - cols)/2"/>
+                <v-col :cols="cols">
                     <v-btn @click="downloadMyPdf" color="blue" class="mt-4" block>Download
                         Hausaufgabe</v-btn></v-col></v-row>
         </div>
