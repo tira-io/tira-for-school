@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="8">
+      <v-col cols="7">
         Als erstes musst du deinen Datensatz entsprechend labeln.
         Das bedeutet, dass du deine Bilder ihrer korrekten Klasse (entweder
         "Vorfahrtsstraße" oder "Vorfahrt-gewähren") zuordnen und dem
@@ -16,8 +16,8 @@
         Lade jetzt alle diese Bilder an der passenden Stelle hoch und klicke
         dann auf weiter, um deine KI zu trainieren.
       </v-col>
-      <v-col cols="4">
-        <v-img src="@/assets/Foto.png">
+      <v-col cols="5" align="center" justify="center">
+        <v-img :width="300" src="@/assets/Foto.png">
           <template v-slot:placeholder>
             <v-row class="fill-height ma-0" align="center" justify="center">
               <v-progress-circular indeterminate color="white"></v-progress-circular>
