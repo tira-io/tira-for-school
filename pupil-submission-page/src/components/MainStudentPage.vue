@@ -31,7 +31,7 @@
       <v-stepper-window-item :value="1">
         <Stepper_1 />
         <div class="text-center">
-          <v-row><v-col cols="3" /><v-col cols="6"><v-btn @click="step = 2" color="blue" class="mt-5"
+          <v-row><v-col :cols="(12 - cols)/2"/><v-col :cols="cols"><v-btn @click="step = 2" color="blue" class="mt-5"
                 block>Weiter</v-btn></v-col></v-row>
         </div>
       </v-stepper-window-item>
@@ -124,6 +124,13 @@ export default {
       }
 
       return false;
+    },
+    cols() {
+      if (is_mobile()) {
+        return 12;
+      } else {
+        return 8;
+      }
     }
   },
   methods: {
