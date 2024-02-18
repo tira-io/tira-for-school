@@ -38,7 +38,6 @@
   
 <script lang="ts">
 import pdfPath from '@/assets/StudentAufgabe.pdf';
-import trainingPath from '@/assets/training-data.zip';
 import { is_mobile } from "@/main";
 
 // Define the method

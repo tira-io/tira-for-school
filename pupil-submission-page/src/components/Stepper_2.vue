@@ -14,7 +14,7 @@
           </li>
           <li class="text-left">
             Alle deine Bilder sollten dafür am besten in zwei entsprechend
-            benannten Ordnern auf deinem Computer abgespeichert sein.
+            benannten Ordnern auf deinem Computer abgespeichert sein. Falls du keine Bilder hast, kannst du <a href="javascript:void(0)" @click="downloadData"> hier welche herunterladen</a>.
           </li>
         </ul>
       </v-col>
@@ -47,6 +47,9 @@
 
 <script lang="ts">
 import UploadImagesForClass from '@/components/UploadImagesForClass.vue'
+import trainingDataPath from '@/assets/training-data.zip';
+
+
 
 export default {
   props: ['klasse_vorfahrt_strasse', 'klasse_vorfahrt_gewaehren'],
@@ -54,5 +57,13 @@ export default {
     cols: 2
   }),
   components: { UploadImagesForClass },
+  methods: {
+    downloadData() {
+      const link = document.createElement('a');
+      link.href = trainingDataPath;
+      link.download = 'training-data.zip';
+      link.click();
+    }
+  },
 }
 </script>

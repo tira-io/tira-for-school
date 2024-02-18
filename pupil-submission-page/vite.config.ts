@@ -29,6 +29,7 @@ export default defineConfig({
       },
     }),
   ],
+  assetsInclude: ['**/*.zip'],
   define: { 'process.env': {} },
   resolve: {
     alias: {
