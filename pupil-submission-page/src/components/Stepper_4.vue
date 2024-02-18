@@ -1,5 +1,5 @@
 <template>
-    <v-card class="mx-auto" max-width="500" min-height="500" @click="show = true;"
+    <v-card class="mx-auto" max-width="500" min-height="500" @click="show = true; examples_to_show =['correct-0-predicted-0', 'correct-0-predicted-1', 'correct-1-predicted-0', 'correct-1-predicted-1']"
         :image="header_image" theme="dark">
         <v-card-title>
             <span class="custom-text">Deine KI war in</span>
@@ -54,7 +54,7 @@
                         </v-card>
                     </v-col>
                     <v-col cols="5">
-                        <v-card flat class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/y_true.png"
+                        <v-card flat class="mx-auto" @click="show = true; examples_to_show = ['correct-1-predicted-1']" style="width: 100%" image="@/assets/y_true.png"
                             theme="dark">
                             <v-card-title>
                                 <span class="custom-text">Deine KI hat </span>
@@ -70,7 +70,7 @@
                     </v-col>
 
                     <v-col cols="5">
-                        <v-card flat class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/p_false.png"
+                        <v-card flat class="mx-auto" @click="show = true; examples_to_show =['correct-1-predicted-0']" style="width: 100%" image="@/assets/y_false.png"
                             theme="dark">
                             <v-card-title>
                                 <span class="custom-text">Deine KI hat </span>
@@ -95,7 +95,7 @@
                         </v-card>
                     </v-col>
                     <v-col cols="5">
-                        <v-card flat class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/y_false.png"
+                        <v-card flat class="mx-auto" @click="show = true; examples_to_show =['correct-0-predicted-1']" style="width: 100%" image="@/assets/p_false.png"
                             theme="dark">
                             <v-card-title>
                                 <span class="custom-text">Deine KI hat </span>
@@ -112,7 +112,7 @@
                     </v-col>
 
                     <v-col cols="5">
-                        <v-card flat class="mx-auto" @click="show = true;" style="width: 100%" image="@/assets/p_true.png"
+                        <v-card flat class="mx-auto" @click="show = true; examples_to_show = ['correct-0-predicted-0']" style="width: 100%" image="@/assets/p_true.png"
                             theme="dark">
                             <v-card-title>
                                 <span class="custom-text">Deine KI hat </span>
@@ -181,11 +181,20 @@
     </v-expansion-panels>
 
     <v-dialog v-model="show" width="90%" height="90%">
-        <v-card>
-            <div v-for="f in selected_images">
-                <rendered-prediction :input_image="f" prediction="Vorfahrtsstra&szlig;e erkannt (64%)" />
-            </div>
-        </v-card>
+       <template v-slot:default="{ isActive }">
+            <v-card width="100%" height="100%">
+                <v-card-text>
+                    <h1>&Uuml;bersicht &uuml;ber die Vorhersagen deiner KI</h1>
+                    <div v-for="f in selected_images">
+                        <rendered-prediction :input_image="f" :prediction="f.prediction" />
+                    </div>
+                </v-card-text>
+
+                <v-card-actions>
+                    <v-btn color="primary" block @click="show = false">Schlie&szlig;en</v-btn>
+                </v-card-actions>
+            </v-card>
+        </template>
     </v-dialog>
 </template>
 
@@ -216,12 +225,7 @@ export default {
         show: false,
         test_bilder: [],
         test_predictions: [],
-        selected_images: [
-            { 'src': someImage },
-            { 'src': someImage },
-            { 'src': someImage },
-            { 'src': someImage },
-        ]
+        examples_to_show: []
     }),
     methods: {
         async make_some_predictions() {
@@ -266,6 +270,16 @@ export default {
         false_negative_count() {
             return this.model['categories']['correct-' + label_vorfahrt_gewaehren + '-predicted-' + label_vorfahrt_strasse].length
         },
+        selected_images() {
+            let ret = []
+            for (let i of this.examples_to_show) {
+                for (let j of this.model['categories'][i]) {
+                    ret.push(j)
+                }
+            }
+
+            return ret
+        }
     }
 }
 </script>

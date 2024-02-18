@@ -123,7 +123,7 @@ export default {
 
         this.training_progress = parseInt(Math.max(((i / vorfahrt_strasse_images.length) * 25) + 50, 50))
 
-        categories['correct-' + label_vorfahrt_strasse + '-predicted-' + prediction.classIndex].push({ 'src': vorfahrt_strasse_image })
+        categories['correct-' + label_vorfahrt_strasse + '-predicted-' + prediction.classIndex].push({ 'src': vorfahrt_strasse_image, 'prediction': prediction})
       }
 
       for (let i = 0; i < vorfahrt_gewaehren_images.length; i++) {
@@ -131,7 +131,7 @@ export default {
         let prediction = await model.predict(vorfahrt_gewaehren_image)
         this.training_progress = parseInt(Math.max(((i / vorfahrt_gewaehren_images.length) * 25) + 75, 75))
 
-        categories['correct-' + label_vorfahrt_gewaehren + '-predicted-' + prediction.classIndex].push({ 'src': vorfahrt_gewaehren_image })
+        categories['correct-' + label_vorfahrt_gewaehren + '-predicted-' + prediction.classIndex].push({ 'src': vorfahrt_gewaehren_image, 'prediction': prediction})
       }
 
       this.training_progress = 0
