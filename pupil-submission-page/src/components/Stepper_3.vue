@@ -112,11 +112,10 @@ export default {
           c += 1
         } else {
           f += 1
-          console.log('error for label' + training_data[i]['label'])
         }
       }
 
-      console.log('Correct ' + c + ' False: ' + f)
+      console.log('Training finished, with Correct ' + c + ' False: ' + f)
 
       for (let i = 0; i < vorfahrt_strasse_images.length; i++) {
         let vorfahrt_strasse_image = vorfahrt_strasse_images[i]
@@ -136,12 +135,8 @@ export default {
       }
 
       this.training_progress = 0
-      console.log('correct-0-predicted-0:' + categories['correct-0-predicted-0'].length)
-      console.log('correct-0-predicted-1:' + categories['correct-0-predicted-1'].length)
-      console.log('correct-1-predicted-0:' + categories['correct-1-predicted-0'].length)
-      console.log('correct-1-predicted-1:' + categories['correct-1-predicted-1'].length)
-      //let t = await model.predict(someImage)
-      //console.log(t)
+      console.log('Validation finished, with correct-0-predicted-0:' + categories['correct-0-predicted-0'].length + ' correct-0-predicted-1:' + categories['correct-0-predicted-1'].length + ' correct-1-predicted-0:' + categories['correct-1-predicted-0'].length + ' correct-1-predicted-1:' + categories['correct-1-predicted-1'].length)
+
       this.$emit('model-trained', { 'tmp': '1', 'model': model, 'categories': categories })
     },
     async make_some_predictions() {

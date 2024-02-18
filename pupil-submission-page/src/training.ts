@@ -66,5 +66,5 @@ export async function create_model() {
 
 mobileNetPromise.then((mobilenet:any) => {
   mobileNet = mobilenet
-  console.log('mobilenet loaded' + mobilenet)
+  console.log('mobilenet loaded.')
 })
