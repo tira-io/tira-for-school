@@ -161,6 +161,8 @@
                         <li class="text-left">Hat deine KI vielleicht ein Problem mit einer bestimmten Klasse?</li>
                         <li class="text-left">Schaffst du es in die Top 3 der KI's?</li>
                     </ul>
+
+                    Um dir das verbessern deiner KI etwas leichter zu machen, kannst du <a href="javascript:void(0)" @click="downloadData"> hier weitere Bilder herunterladen</a>.
                 </v-container>
                 <br>
                 <v-btn color="primary" @click="$emit('change-step', 2)">Zurück zu Schritt 2</v-btn>
@@ -211,6 +213,7 @@ import car_accident1 from '@/assets/car_accident1.jpg';
 import car_accident2 from '@/assets/car_accident2.jpg';
 import car_accident3 from '@/assets/car_accident3.jpg';
 import car_accident4 from '@/assets/car_accident4.jpg';
+import validationDataPath from '@/assets/validation-data.zip';
 
 export default {
     components: { UploadImagesForClass, RenderedPrediction },
@@ -281,7 +284,13 @@ export default {
             }
 
             return ret
-        }
+        },
+        downloadData() {
+            const link = document.createElement('a');
+            link.href = validationDataPath;
+            link.download = 'validation-data.zip';
+            link.click();
+        },
     }
 }
 </script>
