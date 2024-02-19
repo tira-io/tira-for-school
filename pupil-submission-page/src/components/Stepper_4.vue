@@ -140,6 +140,8 @@
                     <v-container class="ma-3">
                         Hier kannst du deine KI vor besondere Herausforderungen stellen. Lade dafür weitere Testbilder hoch,
                         welche nicht Teil der Trainingsdaten sind.
+                        Um dir das Testen deiner KI etwas leichter zu machen, kannst du <a href="javascript:void(0)"
+                            @click="downloadTestData"> hier Test-Bilder herunterladen</a>.
                         Unten kannst du sehen, wie sicher sich die KI bei den Klassifikationen ist.
                         <br>
                         Bei welchen Bildern hat deine KI besondere Schwierigkeiten?
@@ -172,8 +174,9 @@
                                 <v-btn color="primary" @click="$emit('change-step', 2)">Zurück zu Schritt 2</v-btn>
                                 <br>
                                 <br>
-                                Um dir das verbessern deiner KI etwas leichter zu machen, kannst du <a
-                                    href="javascript:void(0)" @click="downloadData"> hier weitere Bilder herunterladen</a>.
+                                Um dir das Verbessern deiner KI etwas leichter zu machen, kannst du <a
+                                    href="javascript:void(0)" @click="downloadValidationData"> hier weitere Bilder
+                                    herunterladen</a>.
                             </v-container>
                         </v-col>
                         <v-col cols="4">
@@ -231,6 +234,7 @@ import car_accident2 from '@/assets/car_accident2.jpg';
 import car_accident3 from '@/assets/car_accident3.jpg';
 import car_accident4 from '@/assets/car_accident4.jpg';
 import validationDataPath from '@/assets/validation-data.zip';
+import testDataPath from '@/assets/test-data.zip';
 
 export default {
     components: { UploadImagesForClass, RenderedPrediction },
@@ -311,10 +315,16 @@ export default {
 
             return ret
         },
-        downloadData() {
+        downloadValidationData() {
             const link = document.createElement('a');
             link.href = validationDataPath;
             link.download = 'validation-data.zip';
+            link.click();
+        },
+        downloadTestData() {
+            const link = document.createElement('a');
+            link.href = testDataPath;
+            link.download = 'test-data.zip';
             link.click();
         },
     }

@@ -70,11 +70,11 @@ export default {
     test_predictions: [],
     numberRules: [
       value => {
-        if (parseFloat(value) > 0) {
-          return true
-        }
-
-        return 'bitte wähle eine Zahl größer 0.'
+        const number = parseFloat(value);
+            if (!isNaN(value) && number > 0 && number <= 100) {
+              return true;
+            }
+        return 'Bitte wähle eine Zahl größer 0, aber kleiner als 100.'
       },
     ]
   }),
