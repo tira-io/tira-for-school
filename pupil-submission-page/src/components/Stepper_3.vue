@@ -15,7 +15,7 @@
         <v-expansion-panel title="Erweiterte Einstellungen">
           <v-expansion-panel-text>
             <p>
-              Hier kannst du dein Modell weiter verändern, um es zu verbessern.<br />
+              Hier kannst du dein Modell weiter verändern, um es zu verbessern.<br>
               Lasse vorerst alles so wie es ist, du kommst später nochmal zurück.
             </p>
             <v-row>

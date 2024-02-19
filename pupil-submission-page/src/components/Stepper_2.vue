@@ -8,7 +8,7 @@
         Computer somit die Lösung vorsagen musst, damit er mit diesen
         Trainieren kann.<br>
         Alle deine Bilder sollten dafür am besten in zwei entsprechend
-        benannten Ordnern auf deinem Computer abgespeichert sein.
+        benannten Ordnern auf deinem Computer abgespeichert sein.<br>
         Falls du keine eigenen Bilder hast, kannst du <a href="javascript:void(0)" @click="downloadData"> hier welche
           herunterladen</a>.
         <br>

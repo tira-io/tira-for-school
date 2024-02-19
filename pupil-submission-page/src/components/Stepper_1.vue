@@ -4,7 +4,7 @@
         <v-row>
             <v-col :cols="(12 - cols) / 2" />
             <v-col :cols="cols">
-                <h2>Baue deine erste KI um Straßenschilder zu klassifizieren!</h2>
+                <h2>Baue deine erste KI, um Straßenschilder zu klassifizieren!</h2>
 
                 Auf dieser Webseite kannst du einem praktischen Beispiel lernen, wie eine KI gebaut wird.
                 Zusammen werden wir eine KI trainieren, um Straßenschilder zu klassifizieren.
