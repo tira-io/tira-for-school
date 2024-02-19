@@ -1,5 +1,5 @@
 <template>
-  <v-stepper :items="['Deine Aufgabe', 'Baue Deinen Datensatz', 'Trainiere Deine KI', 'Teste Deine KI']"
+  <v-stepper :items="['Deine Aufgabe', 'Baue deinen Datensatz', 'Trainiere deine KI', 'Teste deine KI']"
     next-text="Weiter" prev-text="Zur&Uuml;ck" v-model="step" v-if="!is_mobile">
     <template v-slot:item.1>
       <Stepper_1 />

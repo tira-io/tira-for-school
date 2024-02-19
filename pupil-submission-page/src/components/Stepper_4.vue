@@ -1,6 +1,7 @@
 <template>
     <v-container>
-        <h2>Test deiner KI mit 100 Beispielbildern:</h2>
+        <h2>Erfolgsquote deiner KI bei 100 Beispielbildern:</h2>
+        <br>
         <v-card class="mx-auto" max-width="1000" min-height="500"
             @click="show = true; examples_to_show = ['correct-0-predicted-0', 'correct-0-predicted-1', 'correct-1-predicted-0', 'correct-1-predicted-1']"
             :image="header_image" theme="dark">
@@ -16,15 +17,13 @@
             </v-card-text>
         </v-card>
         <v-container class="ma-3">
-            <ul>
-                <li class="text-left">Noch ist die KI nicht perfekt, oder würdest du schon in das selbstfahrende Auto
-                    einsteigen?</li>
-                <li class="text-left">Eine KI wird daher in der Regel mit <strong>qualitativen</strong> und
-                    <strong>quantitativen</strong> Tests ausprobiert und kontinuierlich verbessert.
-                </li>
-                <li class="text-left">Öffne die Tabs unten und schaue, ob du mit diesem Feedback Verbesserungsvorschläge
-                    findest.</li>
-            </ul>
+            Noch ist die KI nicht perfekt, oder würdest du schon in ein selbstfahrendes Auto mit ihr
+            einsteigen?<br>
+            Eine KI wird daher in der Regel mit <strong>qualitativen</strong> und
+            <strong>quantitativen</strong> Tests ausprobiert und kontinuierlich verbessert.
+            <br>
+            Öffne die Tabs unten und schaue, ob du mit diesem Feedback Verbesserungsvorschläge für deine KI
+            findest.
             <br>
         </v-container>
 
@@ -32,13 +31,11 @@
             <v-expansion-panel title="Quantitative Tests">
                 <v-expansion-panel-text>
                     <v-container class="ma-3">
-                        <ul>
-                            <li class="text-left">Hier siehst du eine sogenannte <strong>Wahrheitstabelle</strong>.</li>
-                            <li class="text-left">Diese zeigt dir an, wie oft deine KI welchen Fehler gemacht hat.</li>
-                            <li class="text-left">Dafür wurden deiner KI haufenweise Testfälle gegeben, welche sie versucht
-                                hat zu klassifizieren.</li>
-                            <li class="text-left">Dabei kann es zu diesen verschiedenen Fehlern kommen.</li>
-                        </ul>
+                        Hier siehst du eine sogenannte <strong>Wahrheitstabelle</strong>.
+                        Diese zeigt dir an, wie oft deine KI welchen Fehler gemacht hat. <br>
+                        Dafür wurden deiner KI in unserem Beispiel 100 Testfälle gegeben, welche sie klassifizieren sollte.
+                        Dabei kann es zu verschiedenen Fehlern kommen.<br>
+                        Wo liegen die Probleme deiner KI?
                     </v-container>
                     <v-row>
                         <v-col cols="2"> </v-col>
@@ -141,15 +138,11 @@
             <v-expansion-panel title="Qualititative Tests">
                 <v-expansion-panel-text>
                     <v-container class="ma-3">
-                        <ul>
-                            <li class="text-left">Hier kannst du deine KI vor besondere Herausforderungen stellen.</li>
-                            <li class="text-left">Lade dafür weitere Testbilder hoch, welche nicht Teil der Trainingsdaten
-                                sind.
-                            </li>
-                            <li class="text-left">Nun kannst du sehen, wie sicher sich die KI bei den Klassifikationen ist.
-                            </li>
-                            <li class="text-left">Bei welchen Bildern hat deine KI besondere Schwierigkeiten?</li>
-                        </ul>
+                        Hier kannst du deine KI vor besondere Herausforderungen stellen. Lade dafür weitere Testbilder hoch,
+                        welche nicht Teil der Trainingsdaten sind.
+                        Unten kannst du sehen, wie sicher sich die KI bei den Klassifikationen ist.
+                        <br>
+                        Bei welchen Bildern hat deine KI besondere Schwierigkeiten?
                     </v-container>
                     <upload-images-for-class class_name='Testbilder' :available_images='test_bilder'
                         @update="make_some_predictions" />
@@ -162,22 +155,34 @@
 
             <v-expansion-panel title="Der Machine Learning Zyklus">
                 <v-expansion-panel-text>
-                    <v-container class="ma-3">
-                        <ul>
-                            <li class="text-left">Wenn du deine KI quantitativ und qualitativ getestet hast, musst du sie
-                                jetzt
-                                natürlcih verbessern.</li>
-                            <li class="text-left">Gehe dafür wieder zu Schritt 2 und baue deine Verbesserungsideen in den
-                                Datensatz ein.</li>
-                            <li class="text-left">Hat deine KI vielleicht ein Problem mit einer bestimmten Klasse?</li>
-                            <li class="text-left">Schaffst du es in die Top 3 der KI's?</li>
-                        </ul>
 
-                        Um dir das verbessern deiner KI etwas leichter zu machen, kannst du <a href="javascript:void(0)"
-                            @click="downloadData"> hier weitere Bilder herunterladen</a>.
-                    </v-container>
-                    <br>
-                    <v-btn color="primary" @click="$emit('change-step', 2)">Zurück zu Schritt 2</v-btn>
+                    <v-row>
+                        <v-col cols="8">
+                            <v-container class="ma-3">
+                                Wenn du deine KI quantitativ und qualitativ getestet hast, musst
+                                du sie jetzt natürlich verbessern.
+                                Gehe dafür wieder zu Schritt 2 und baue deine Verbesserungsideen
+                                in den Datensatz ein.<br>
+                                Hat deine KI vielleicht ein Problem mit einer bestimmten Klasse?
+
+                                <!-- <br> Schaffst du es in die Top 3 der KI's?-->
+
+                                <br>
+                                <br>
+                                <v-btn color="primary" @click="$emit('change-step', 2)">Zurück zu Schritt 2</v-btn>
+                                <br>
+                                <br>
+                                Um dir das verbessern deiner KI etwas leichter zu machen, kannst du <a
+                                    href="javascript:void(0)" @click="downloadData"> hier weitere Bilder herunterladen</a>.
+                            </v-container>
+                        </v-col>
+                        <v-col cols="4">
+                            <v-img :width="300" src="@/assets/Zyklus.png" />
+                        </v-col>
+
+
+
+                    </v-row>
                 </v-expansion-panel-text>
             </v-expansion-panel>
 
@@ -322,4 +327,5 @@ export default {
     background-color: white;
     padding: 2px 4px;
     border-radius: 4px;
-}</style>
+}
+</style>
