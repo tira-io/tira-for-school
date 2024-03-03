@@ -24,7 +24,7 @@
                   hint="Eine Epoche ist abgeschlossen, wenn jedes Beispiel im Trainingsdatenpool mindestens einmal in das Trainingsmodell eingegeben wurde. Sind deine Epochen beispielsweise auf 50 eingestellt, geht das von dir trainierte Modell den gesamten Trainingsdatenpool 50 Mal durch. Generell gilt, je gr&ouml;&szlig;er diese Zahl ist, desto besser lernt dein Modell, die Daten vorherzusagen. Wahrscheinlich solltest du diese Zahl &auml;ndern (in den meisten F&auml;llen erh&ouml;hen), bis du mit deinem Modell gute Ergebnisse bei der Vorhersage erzielst." />
               </v-col>
             </v-row>
-
+            <!--
             <v-row>
               <v-col cols="12">
                 <v-text-field v-model="batch_size" :rules="numberRules" label="Batchgr&ouml;&szlig;e"
@@ -38,8 +38,10 @@
                   hint="&Auml;ndere diese Zahl nur mit gro&szlig;ter Vorsicht. Selbst kleine Unterschiede k&ouml;nnen eine gro&szlig;e Auswirkung auf die Lernf&auml;higkeit deines Modells haben." />
               </v-col>
             </v-row>
+            -->
           </v-expansion-panel-text>
         </v-expansion-panel>
+        
       </v-expansion-panels>
     </v-card>
   </v-container>
@@ -71,10 +73,10 @@ export default {
     numberRules: [
       value => {
         const number = parseFloat(value);
-            if (!isNaN(value) && number > 0 && number <= 100) {
+            if (!isNaN(value) && number > 0 && number <= 20) {
               return true;
             }
-        return 'Bitte wähle eine Zahl größer 0, aber kleiner als 100.'
+        return 'Bitte wähle eine Zahl größer 0, aber kleiner als 20.'
       },
     ]
   }),
