@@ -33,7 +33,8 @@
                     <v-container class="ma-3">
                         Hier siehst du eine sogenannte <strong>Wahrheitstabelle</strong>.
                         Diese zeigt dir an, wie oft deine KI welchen Fehler gemacht hat. <br>
-                        Dafür wurden deiner KI in unserem Beispiel 100 Testfälle gegeben, welche sie klassifizieren sollte.
+                        Dafür wurden deiner KI in unserem Beispiel 100 Testfälle gegeben, welche sie klassifizieren
+                        sollte.
                         Dabei kann es zu verschiedenen Fehlern kommen.<br>
                         Wo liegen die Probleme deiner KI?
                     </v-container>
@@ -58,15 +59,16 @@
                             </v-card>
                         </v-col>
                         <v-col cols="5">
-                            <v-card flat class="mx-auto" @click="show = true; examples_to_show = ['correct-0-predicted-0']"
-                                style="width: 100%" image="@/assets/p_true.png" theme="dark">
+                            <v-card flat class="mx-auto"
+                                @click="show = true; examples_to_show = ['correct-0-predicted-0']" style="width: 100%"
+                                image="@/assets/p_true.png" theme="dark">
                                 <v-card-title>
                                     <span class="custom-text">Deine KI hat </span>
                                 </v-card-title>
                                 <v-card-text class="py-0">
                                     <v-row align="center" no-gutters>
                                         <v-col class="text-h2" style="color: green;" cols="8">{{ true_negative_count
-                                        }}</v-col>
+                                            }}</v-col>
                                     </v-row>
                                     <br>
                                     <span class="custom-text">Vorfahrtsstra&szlig;e Schilder korrekt erkannt.</span>
@@ -75,15 +77,16 @@
                         </v-col>
 
                         <v-col cols="5">
-                            <v-card flat class="mx-auto" @click="show = true; examples_to_show = ['correct-0-predicted-1']"
-                                style="width: 100%" image="@/assets/p_false.png" theme="dark">
+                            <v-card flat class="mx-auto"
+                                @click="show = true; examples_to_show = ['correct-0-predicted-1']" style="width: 100%"
+                                image="@/assets/p_false.png" theme="dark">
                                 <v-card-title>
                                     <span class="custom-text">Deine KI hat </span>
                                 </v-card-title>
                                 <v-card-text class="py-0">
                                     <v-row align="center" no-gutters>
                                         <v-col class="text-h2" style="color: red;" cols="8">{{ false_positive_count
-                                        }}</v-col>
+                                            }}</v-col>
                                     </v-row>
                                     <br>
                                     <span class="custom-text">Vorfahrtsstra&szlig;e Schilder falsch zugeordnet.</span>
@@ -99,32 +102,35 @@
                             </v-card>
                         </v-col>
                         <v-col cols="5">
-                            <v-card flat class="mx-auto" @click="show = true; examples_to_show = ['correct-1-predicted-0']"
-                                style="width: 100%" image="@/assets/y_false.png" theme="dark">
+                            <v-card flat class="mx-auto"
+                                @click="show = true; examples_to_show = ['correct-1-predicted-0']" style="width: 100%"
+                                image="@/assets/y_false.png" theme="dark">
                                 <v-card-title>
                                     <span class="custom-text">Deine KI hat </span>
                                 </v-card-title>
                                 <v-card-text class="py-0">
                                     <v-row align="center" no-gutters>
                                         <v-col class="text-h2" style="color: red;" cols="8">{{ false_negative_count
-                                        }}</v-col>
+                                            }}</v-col>
                                     </v-row>
                                     <br>
-                                    <span class="custom-text">"Vorfahrt gew&auml;hren" Schilder falsch zugeordnet.</span>
+                                    <span class="custom-text">"Vorfahrt gew&auml;hren" Schilder falsch
+                                        zugeordnet.</span>
                                 </v-card-text>
                             </v-card>
                         </v-col>
 
                         <v-col cols="5">
-                            <v-card flat class="mx-auto" @click="show = true; examples_to_show = ['correct-1-predicted-1']"
-                                style="width: 100%" image="@/assets/y_true.png" theme="dark">
+                            <v-card flat class="mx-auto"
+                                @click="show = true; examples_to_show = ['correct-1-predicted-1']" style="width: 100%"
+                                image="@/assets/y_true.png" theme="dark">
                                 <v-card-title>
                                     <span class="custom-text">Deine KI hat </span>
                                 </v-card-title>
                                 <v-card-text class="py-0">
                                     <v-row align="center" no-gutters>
                                         <v-col class="text-h2" style="color: green;" cols="8">{{ true_positive_count
-                                        }}</v-col>
+                                            }}</v-col>
                                     </v-row>
                                     <br>
                                     <span class="custom-text">"Vorfahrt gew&auml;hren" Schilder korrekt erkannt.</span>
@@ -138,10 +144,10 @@
             <v-expansion-panel title="Qualititative Tests">
                 <v-expansion-panel-text>
                     <v-container class="ma-3">
-                        Hier kannst du deine KI vor besondere Herausforderungen stellen. Lade dafür weitere Testbilder hoch,
+                        Hier kannst du deine KI vor besondere Herausforderungen stellen. Lade dafür weitere Testbilder
+                        hoch,
                         welche nicht Teil der Trainingsdaten sind.
-                        Um dir das Testen deiner KI etwas leichter zu machen, kannst du <a href="javascript:void(0)"
-                            @click="downloadTestData"> hier Test-Bilder herunterladen</a>.
+
                         Unten kannst du sehen, wie sicher sich die KI bei den Klassifikationen ist.
                         <br>
                         Bei welchen Bildern hat deine KI besondere Schwierigkeiten?
@@ -172,11 +178,6 @@
                                 <br>
                                 <br>
                                 <v-btn color="primary" @click="$emit('change-step', 2)">Zurück zu Schritt 2</v-btn>
-                                <br>
-                                <br>
-                                Um dir das Verbessern deiner KI etwas leichter zu machen, kannst du <a
-                                    href="javascript:void(0)" @click="downloadValidationData"> hier weitere Bilder
-                                    herunterladen</a>.
                             </v-container>
                         </v-col>
                         <v-col cols="4">
@@ -201,7 +202,20 @@
             </v-expansion-panel-text>
         </v-expansion-panel>
         -->
-
+            <v-expansion-panel title="Weitere Trainings- und Testdaten">
+                <v-expansion-panel-text>
+                    <v-container class="ma-3">
+                        Lade hier weitere Bilder zum Trainieren und Testen herunter. <br>
+                        Achte darauf, dass du die Trainings- und Testdaten nie vermischst.
+                        <br>
+                        <br>
+                        <a href="javascript:void(0)" @click="downloadTestData"> Testdaten</a>
+                        <br>
+                        <br>
+                        <a href="javascript:void(0)" @click="downloadValidationData">Trainingsdaten</a>
+                    </v-container>
+                </v-expansion-panel-text>
+            </v-expansion-panel>
         </v-expansion-panels>
     </v-container>
     <v-dialog v-model="show" width="90%" height="90%">
