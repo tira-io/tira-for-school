@@ -225,7 +225,6 @@
 <script lang="ts">
 import UploadImagesForClass from '@/components/UploadImagesForClass.vue'
 import RenderedPrediction from '@/components/RenderedPrediction.vue'
-import someImage from '@/assets/result-fail.png'
 import { model } from '@/training.ts'
 import { label_vorfahrt_strasse, label_vorfahrt_gewaehren } from '@/datasets.ts'
 

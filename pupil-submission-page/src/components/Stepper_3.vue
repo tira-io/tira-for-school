@@ -50,7 +50,6 @@
 <script lang="ts">
 import { create_model, model } from '@/training.ts'
 import { vorfahrt_strasse_images, vorfahrt_gewaehren_images, label_vorfahrt_strasse, label_vorfahrt_gewaehren } from '@/datasets.ts'
-import someImage from '@/assets/result-fail.png'
 import UploadImagesForClass from '@/components/UploadImagesForClass.vue'
 import RenderedPrediction from '@/components/RenderedPrediction.vue'
 
