@@ -1,13 +1,12 @@
-import vorfahrt_strasse_0 from '@/assets/validation-data/vorfahrt-strasse-0.jpg';
-import vorfahrt_strasse_1 from '@/assets/validation-data/vorfahrt-strasse-1.jpg';
-import vorfahrt_strasse_2 from '@/assets/validation-data/vorfahrt-strasse-2.jpg';
-import vorfahrt_strasse_3 from '@/assets/validation-data/vorfahrt-strasse-3.jpg';
-import vorfahrt_strasse_4 from '@/assets/validation-data/vorfahrt-strasse-4.jpg';
-import vorfahrt_strasse_5 from '@/assets/validation-data/vorfahrt-strasse-5.jpg';
-import vorfahrt_strasse_6 from '@/assets/validation-data/vorfahrt-strasse-6.jpg';
-import vorfahrt_strasse_7 from '@/assets/validation-data/vorfahrt-strasse-7.jpg';
-import vorfahrt_strasse_8 from '@/assets/validation-data/vorfahrt-strasse-8.jpg';
-import vorfahrt_strasse_9 from '@/assets/validation-data/vorfahrt-strasse-9.jpg';
+import vorfahrt_strasse_1 from '@/assets/validation-data/vorfahrt-strasse-01.jpg';
+import vorfahrt_strasse_2 from '@/assets/validation-data/vorfahrt-strasse-02.jpg';
+import vorfahrt_strasse_3 from '@/assets/validation-data/vorfahrt-strasse-03.jpg';
+import vorfahrt_strasse_4 from '@/assets/validation-data/vorfahrt-strasse-04.jpg';
+import vorfahrt_strasse_5 from '@/assets/validation-data/vorfahrt-strasse-05.jpg';
+import vorfahrt_strasse_6 from '@/assets/validation-data/vorfahrt-strasse-06.jpg';
+import vorfahrt_strasse_7 from '@/assets/validation-data/vorfahrt-strasse-07.jpg';
+import vorfahrt_strasse_8 from '@/assets/validation-data/vorfahrt-strasse-08.jpg';
+import vorfahrt_strasse_9 from '@/assets/validation-data/vorfahrt-strasse-09.jpg';
 import vorfahrt_strasse_10 from '@/assets/validation-data/vorfahrt-strasse-10.jpg';
 import vorfahrt_strasse_11 from '@/assets/validation-data/vorfahrt-strasse-11.jpg';
 import vorfahrt_strasse_12 from '@/assets/validation-data/vorfahrt-strasse-12.jpg';
@@ -49,66 +48,16 @@ import vorfahrt_strasse_47 from '@/assets/validation-data/vorfahrt-strasse-47.jp
 import vorfahrt_strasse_48 from '@/assets/validation-data/vorfahrt-strasse-48.jpg';
 import vorfahrt_strasse_49 from '@/assets/validation-data/vorfahrt-strasse-49.jpg';
 import vorfahrt_strasse_50 from '@/assets/validation-data/vorfahrt-strasse-50.jpg';
-import vorfahrt_strasse_51 from '@/assets/validation-data/vorfahrt-strasse-51.jpg';
-import vorfahrt_strasse_52 from '@/assets/validation-data/vorfahrt-strasse-52.jpg';
-import vorfahrt_strasse_53 from '@/assets/validation-data/vorfahrt-strasse-53.jpg';
-import vorfahrt_strasse_54 from '@/assets/validation-data/vorfahrt-strasse-54.jpg';
-import vorfahrt_strasse_55 from '@/assets/validation-data/vorfahrt-strasse-55.jpg';
-import vorfahrt_strasse_56 from '@/assets/validation-data/vorfahrt-strasse-56.jpg';
-import vorfahrt_strasse_57 from '@/assets/validation-data/vorfahrt-strasse-57.jpg';
-import vorfahrt_strasse_58 from '@/assets/validation-data/vorfahrt-strasse-58.jpg';
-import vorfahrt_strasse_59 from '@/assets/validation-data/vorfahrt-strasse-59.jpg';
-import vorfahrt_strasse_60 from '@/assets/validation-data/vorfahrt-strasse-60.jpg';
-import vorfahrt_strasse_61 from '@/assets/validation-data/vorfahrt-strasse-61.jpg';
-import vorfahrt_strasse_62 from '@/assets/validation-data/vorfahrt-strasse-62.jpg';
-import vorfahrt_strasse_63 from '@/assets/validation-data/vorfahrt-strasse-63.jpg';
-import vorfahrt_strasse_64 from '@/assets/validation-data/vorfahrt-strasse-64.jpg';
-import vorfahrt_strasse_65 from '@/assets/validation-data/vorfahrt-strasse-65.jpg';
-import vorfahrt_strasse_66 from '@/assets/validation-data/vorfahrt-strasse-66.jpg';
-import vorfahrt_strasse_67 from '@/assets/validation-data/vorfahrt-strasse-67.jpg';
-import vorfahrt_strasse_68 from '@/assets/validation-data/vorfahrt-strasse-68.jpg';
-import vorfahrt_strasse_69 from '@/assets/validation-data/vorfahrt-strasse-69.jpg';
-import vorfahrt_strasse_70 from '@/assets/validation-data/vorfahrt-strasse-70.jpg';
-import vorfahrt_strasse_71 from '@/assets/validation-data/vorfahrt-strasse-71.jpg';
-import vorfahrt_strasse_72 from '@/assets/validation-data/vorfahrt-strasse-72.jpg';
-import vorfahrt_strasse_73 from '@/assets/validation-data/vorfahrt-strasse-73.jpg';
-import vorfahrt_strasse_74 from '@/assets/validation-data/vorfahrt-strasse-74.jpg';
-import vorfahrt_strasse_75 from '@/assets/validation-data/vorfahrt-strasse-75.jpg';
-import vorfahrt_strasse_76 from '@/assets/validation-data/vorfahrt-strasse-76.jpg';
-import vorfahrt_strasse_77 from '@/assets/validation-data/vorfahrt-strasse-77.jpg';
-import vorfahrt_strasse_78 from '@/assets/validation-data/vorfahrt-strasse-78.jpg';
-import vorfahrt_strasse_79 from '@/assets/validation-data/vorfahrt-strasse-79.jpg';
-import vorfahrt_strasse_80 from '@/assets/validation-data/vorfahrt-strasse-80.jpg';
-import vorfahrt_strasse_81 from '@/assets/validation-data/vorfahrt-strasse-81.jpg';
-import vorfahrt_strasse_82 from '@/assets/validation-data/vorfahrt-strasse-82.jpg';
-import vorfahrt_strasse_83 from '@/assets/validation-data/vorfahrt-strasse-83.jpg';
-import vorfahrt_strasse_84 from '@/assets/validation-data/vorfahrt-strasse-84.jpg';
-import vorfahrt_strasse_85 from '@/assets/validation-data/vorfahrt-strasse-85.jpg';
-import vorfahrt_strasse_86 from '@/assets/validation-data/vorfahrt-strasse-86.jpg';
-import vorfahrt_strasse_87 from '@/assets/validation-data/vorfahrt-strasse-87.jpg';
-import vorfahrt_strasse_88 from '@/assets/validation-data/vorfahrt-strasse-88.jpg';
-import vorfahrt_strasse_89 from '@/assets/validation-data/vorfahrt-strasse-89.jpg';
-import vorfahrt_strasse_90 from '@/assets/validation-data/vorfahrt-strasse-90.jpg';
-import vorfahrt_strasse_91 from '@/assets/validation-data/vorfahrt-strasse-91.jpg';
-import vorfahrt_strasse_92 from '@/assets/validation-data/vorfahrt-strasse-92.jpg';
-import vorfahrt_strasse_93 from '@/assets/validation-data/vorfahrt-strasse-93.jpg';
-import vorfahrt_strasse_94 from '@/assets/validation-data/vorfahrt-strasse-94.jpg';
-import vorfahrt_strasse_95 from '@/assets/validation-data/vorfahrt-strasse-95.jpg';
-import vorfahrt_strasse_96 from '@/assets/validation-data/vorfahrt-strasse-96.jpg';
-import vorfahrt_strasse_97 from '@/assets/validation-data/vorfahrt-strasse-97.jpg';
-import vorfahrt_strasse_98 from '@/assets/validation-data/vorfahrt-strasse-98.jpg';
-import vorfahrt_strasse_99 from '@/assets/validation-data/vorfahrt-strasse-99.jpg';
 
-import vorfahrt_gewaehren_0 from '@/assets/validation-data/vorfahrt-gewaehren-0.jpg';
-import vorfahrt_gewaehren_1 from '@/assets/validation-data/vorfahrt-gewaehren-1.jpg';
-import vorfahrt_gewaehren_2 from '@/assets/validation-data/vorfahrt-gewaehren-2.jpg';
-import vorfahrt_gewaehren_3 from '@/assets/validation-data/vorfahrt-gewaehren-3.jpg';
-import vorfahrt_gewaehren_4 from '@/assets/validation-data/vorfahrt-gewaehren-4.jpg';
-import vorfahrt_gewaehren_5 from '@/assets/validation-data/vorfahrt-gewaehren-5.jpg';
-import vorfahrt_gewaehren_6 from '@/assets/validation-data/vorfahrt-gewaehren-6.jpg';
-import vorfahrt_gewaehren_7 from '@/assets/validation-data/vorfahrt-gewaehren-7.jpg';
-import vorfahrt_gewaehren_8 from '@/assets/validation-data/vorfahrt-gewaehren-8.jpg';
-import vorfahrt_gewaehren_9 from '@/assets/validation-data/vorfahrt-gewaehren-9.jpg';
+import vorfahrt_gewaehren_1 from '@/assets/validation-data/vorfahrt-gewaehren-01.jpg';
+import vorfahrt_gewaehren_2 from '@/assets/validation-data/vorfahrt-gewaehren-02.jpg';
+import vorfahrt_gewaehren_3 from '@/assets/validation-data/vorfahrt-gewaehren-03.jpg';
+import vorfahrt_gewaehren_4 from '@/assets/validation-data/vorfahrt-gewaehren-04.jpg';
+import vorfahrt_gewaehren_5 from '@/assets/validation-data/vorfahrt-gewaehren-05.jpg';
+import vorfahrt_gewaehren_6 from '@/assets/validation-data/vorfahrt-gewaehren-06.jpg';
+import vorfahrt_gewaehren_7 from '@/assets/validation-data/vorfahrt-gewaehren-07.jpg';
+import vorfahrt_gewaehren_8 from '@/assets/validation-data/vorfahrt-gewaehren-08.jpg';
+import vorfahrt_gewaehren_9 from '@/assets/validation-data/vorfahrt-gewaehren-09.jpg';
 import vorfahrt_gewaehren_10 from '@/assets/validation-data/vorfahrt-gewaehren-10.jpg';
 import vorfahrt_gewaehren_11 from '@/assets/validation-data/vorfahrt-gewaehren-11.jpg';
 import vorfahrt_gewaehren_12 from '@/assets/validation-data/vorfahrt-gewaehren-12.jpg';
@@ -150,69 +99,23 @@ import vorfahrt_gewaehren_47 from '@/assets/validation-data/vorfahrt-gewaehren-4
 import vorfahrt_gewaehren_48 from '@/assets/validation-data/vorfahrt-gewaehren-48.jpg';
 import vorfahrt_gewaehren_49 from '@/assets/validation-data/vorfahrt-gewaehren-49.jpg';
 import vorfahrt_gewaehren_50 from '@/assets/validation-data/vorfahrt-gewaehren-50.jpg';
-import vorfahrt_gewaehren_51 from '@/assets/validation-data/vorfahrt-gewaehren-51.jpg';
-import vorfahrt_gewaehren_52 from '@/assets/validation-data/vorfahrt-gewaehren-52.jpg';
-import vorfahrt_gewaehren_53 from '@/assets/validation-data/vorfahrt-gewaehren-53.jpg';
-import vorfahrt_gewaehren_54 from '@/assets/validation-data/vorfahrt-gewaehren-54.jpg';
-import vorfahrt_gewaehren_55 from '@/assets/validation-data/vorfahrt-gewaehren-55.jpg';
-import vorfahrt_gewaehren_56 from '@/assets/validation-data/vorfahrt-gewaehren-56.jpg';
-import vorfahrt_gewaehren_57 from '@/assets/validation-data/vorfahrt-gewaehren-57.jpg';
-import vorfahrt_gewaehren_58 from '@/assets/validation-data/vorfahrt-gewaehren-58.jpg';
-import vorfahrt_gewaehren_59 from '@/assets/validation-data/vorfahrt-gewaehren-59.jpg';
-import vorfahrt_gewaehren_60 from '@/assets/validation-data/vorfahrt-gewaehren-60.jpg';
-import vorfahrt_gewaehren_61 from '@/assets/validation-data/vorfahrt-gewaehren-61.jpg';
-import vorfahrt_gewaehren_62 from '@/assets/validation-data/vorfahrt-gewaehren-62.jpg';
-import vorfahrt_gewaehren_63 from '@/assets/validation-data/vorfahrt-gewaehren-63.jpg';
-import vorfahrt_gewaehren_64 from '@/assets/validation-data/vorfahrt-gewaehren-64.jpg';
-import vorfahrt_gewaehren_65 from '@/assets/validation-data/vorfahrt-gewaehren-65.jpg';
-import vorfahrt_gewaehren_66 from '@/assets/validation-data/vorfahrt-gewaehren-66.jpg';
-import vorfahrt_gewaehren_67 from '@/assets/validation-data/vorfahrt-gewaehren-67.jpg';
-import vorfahrt_gewaehren_68 from '@/assets/validation-data/vorfahrt-gewaehren-68.jpg';
-import vorfahrt_gewaehren_69 from '@/assets/validation-data/vorfahrt-gewaehren-69.jpg';
-import vorfahrt_gewaehren_70 from '@/assets/validation-data/vorfahrt-gewaehren-70.jpg';
-import vorfahrt_gewaehren_71 from '@/assets/validation-data/vorfahrt-gewaehren-71.jpg';
-import vorfahrt_gewaehren_72 from '@/assets/validation-data/vorfahrt-gewaehren-72.jpg';
-import vorfahrt_gewaehren_73 from '@/assets/validation-data/vorfahrt-gewaehren-73.jpg';
-import vorfahrt_gewaehren_74 from '@/assets/validation-data/vorfahrt-gewaehren-74.jpg';
-import vorfahrt_gewaehren_75 from '@/assets/validation-data/vorfahrt-gewaehren-75.jpg';
-import vorfahrt_gewaehren_76 from '@/assets/validation-data/vorfahrt-gewaehren-76.jpg';
-import vorfahrt_gewaehren_77 from '@/assets/validation-data/vorfahrt-gewaehren-77.jpg';
-import vorfahrt_gewaehren_78 from '@/assets/validation-data/vorfahrt-gewaehren-78.jpg';
-import vorfahrt_gewaehren_79 from '@/assets/validation-data/vorfahrt-gewaehren-79.jpg';
-import vorfahrt_gewaehren_80 from '@/assets/validation-data/vorfahrt-gewaehren-80.jpg';
-import vorfahrt_gewaehren_81 from '@/assets/validation-data/vorfahrt-gewaehren-81.jpg';
-import vorfahrt_gewaehren_82 from '@/assets/validation-data/vorfahrt-gewaehren-82.jpg';
-import vorfahrt_gewaehren_83 from '@/assets/validation-data/vorfahrt-gewaehren-83.jpg';
-import vorfahrt_gewaehren_84 from '@/assets/validation-data/vorfahrt-gewaehren-84.jpg';
-import vorfahrt_gewaehren_85 from '@/assets/validation-data/vorfahrt-gewaehren-85.jpg';
-import vorfahrt_gewaehren_86 from '@/assets/validation-data/vorfahrt-gewaehren-86.jpg';
-import vorfahrt_gewaehren_87 from '@/assets/validation-data/vorfahrt-gewaehren-87.jpg';
-import vorfahrt_gewaehren_88 from '@/assets/validation-data/vorfahrt-gewaehren-88.jpg';
-import vorfahrt_gewaehren_89 from '@/assets/validation-data/vorfahrt-gewaehren-89.jpg';
-import vorfahrt_gewaehren_90 from '@/assets/validation-data/vorfahrt-gewaehren-90.jpg';
-import vorfahrt_gewaehren_91 from '@/assets/validation-data/vorfahrt-gewaehren-91.jpg';
-import vorfahrt_gewaehren_92 from '@/assets/validation-data/vorfahrt-gewaehren-92.jpg';
-import vorfahrt_gewaehren_93 from '@/assets/validation-data/vorfahrt-gewaehren-93.jpg';
-import vorfahrt_gewaehren_94 from '@/assets/validation-data/vorfahrt-gewaehren-94.jpg';
-import vorfahrt_gewaehren_95 from '@/assets/validation-data/vorfahrt-gewaehren-95.jpg';
-import vorfahrt_gewaehren_96 from '@/assets/validation-data/vorfahrt-gewaehren-96.jpg';
-import vorfahrt_gewaehren_97 from '@/assets/validation-data/vorfahrt-gewaehren-97.jpg';
-import vorfahrt_gewaehren_98 from '@/assets/validation-data/vorfahrt-gewaehren-98.jpg';
 
 export const vorfahrt_gewaehren_images = [
-    vorfahrt_gewaehren_0, vorfahrt_gewaehren_1, vorfahrt_gewaehren_2, vorfahrt_gewaehren_3, vorfahrt_gewaehren_4, vorfahrt_gewaehren_5, vorfahrt_gewaehren_6, vorfahrt_gewaehren_7, vorfahrt_gewaehren_8, vorfahrt_gewaehren_9,
+    vorfahrt_gewaehren_1, vorfahrt_gewaehren_2, vorfahrt_gewaehren_3, vorfahrt_gewaehren_4, vorfahrt_gewaehren_5, vorfahrt_gewaehren_6, vorfahrt_gewaehren_7, vorfahrt_gewaehren_8, vorfahrt_gewaehren_9, 
+    vorfahrt_gewaehren_10, vorfahrt_gewaehren_11, vorfahrt_gewaehren_12, vorfahrt_gewaehren_13, vorfahrt_gewaehren_14, vorfahrt_gewaehren_15, vorfahrt_gewaehren_16, vorfahrt_gewaehren_17, vorfahrt_gewaehren_18, vorfahrt_gewaehren_19,
     vorfahrt_gewaehren_20, vorfahrt_gewaehren_21, vorfahrt_gewaehren_22, vorfahrt_gewaehren_23, vorfahrt_gewaehren_24, vorfahrt_gewaehren_25, vorfahrt_gewaehren_26, vorfahrt_gewaehren_27, vorfahrt_gewaehren_28, vorfahrt_gewaehren_29,
+    vorfahrt_gewaehren_30, vorfahrt_gewaehren_31, vorfahrt_gewaehren_32, vorfahrt_gewaehren_33, vorfahrt_gewaehren_34, vorfahrt_gewaehren_35, vorfahrt_gewaehren_36, vorfahrt_gewaehren_37, vorfahrt_gewaehren_38, vorfahrt_gewaehren_39,    
     vorfahrt_gewaehren_40, vorfahrt_gewaehren_41, vorfahrt_gewaehren_42, vorfahrt_gewaehren_43, vorfahrt_gewaehren_44, vorfahrt_gewaehren_45, vorfahrt_gewaehren_46, vorfahrt_gewaehren_47, vorfahrt_gewaehren_48, vorfahrt_gewaehren_49,
-    vorfahrt_gewaehren_60, vorfahrt_gewaehren_61, vorfahrt_gewaehren_62, vorfahrt_gewaehren_63, vorfahrt_gewaehren_64, vorfahrt_gewaehren_65, vorfahrt_gewaehren_66, vorfahrt_gewaehren_67, vorfahrt_gewaehren_68, vorfahrt_gewaehren_69,
-    vorfahrt_gewaehren_89, vorfahrt_gewaehren_90, vorfahrt_gewaehren_91, vorfahrt_gewaehren_92, vorfahrt_gewaehren_93, vorfahrt_gewaehren_94, vorfahrt_gewaehren_95, vorfahrt_gewaehren_96, vorfahrt_gewaehren_97, vorfahrt_gewaehren_98
+    vorfahrt_gewaehren_50
 ]
 
 export const vorfahrt_strasse_images = [
-    vorfahrt_strasse_0, vorfahrt_strasse_1, vorfahrt_strasse_2, vorfahrt_strasse_3, vorfahrt_strasse_4, vorfahrt_strasse_5, vorfahrt_strasse_6, vorfahrt_strasse_7, vorfahrt_strasse_8, vorfahrt_strasse_9,
+    vorfahrt_strasse_1, vorfahrt_strasse_2, vorfahrt_strasse_3, vorfahrt_strasse_4, vorfahrt_strasse_5, vorfahrt_strasse_6, vorfahrt_strasse_7, vorfahrt_strasse_8, vorfahrt_strasse_9,
+    vorfahrt_strasse_10, vorfahrt_strasse_11, vorfahrt_strasse_12, vorfahrt_strasse_13, vorfahrt_strasse_14, vorfahrt_strasse_15, vorfahrt_strasse_16, vorfahrt_strasse_17, vorfahrt_strasse_18, vorfahrt_strasse_19,
     vorfahrt_strasse_20, vorfahrt_strasse_21, vorfahrt_strasse_22, vorfahrt_strasse_23, vorfahrt_strasse_24, vorfahrt_strasse_25, vorfahrt_strasse_26, vorfahrt_strasse_27, vorfahrt_strasse_28, vorfahrt_strasse_29,
+    vorfahrt_strasse_30, vorfahrt_strasse_31, vorfahrt_strasse_32, vorfahrt_strasse_33, vorfahrt_strasse_34, vorfahrt_strasse_35, vorfahrt_strasse_36, vorfahrt_strasse_37, vorfahrt_strasse_38, vorfahrt_strasse_39,
     vorfahrt_strasse_40, vorfahrt_strasse_41, vorfahrt_strasse_42, vorfahrt_strasse_43, vorfahrt_strasse_44, vorfahrt_strasse_45, vorfahrt_strasse_46, vorfahrt_strasse_47, vorfahrt_strasse_48, vorfahrt_strasse_49,
-    vorfahrt_strasse_60, vorfahrt_strasse_61, vorfahrt_strasse_62, vorfahrt_strasse_63, vorfahrt_strasse_64, vorfahrt_strasse_65, vorfahrt_strasse_66, vorfahrt_strasse_67, vorfahrt_strasse_68, vorfahrt_strasse_69,
-    vorfahrt_strasse_89, vorfahrt_strasse_90, vorfahrt_strasse_91, vorfahrt_strasse_92, vorfahrt_strasse_93, vorfahrt_strasse_94, vorfahrt_strasse_95, vorfahrt_strasse_96, vorfahrt_strasse_97, vorfahrt_strasse_98
+    vorfahrt_strasse_50
 ]
 
 export const label_vorfahrt_strasse = 0 
