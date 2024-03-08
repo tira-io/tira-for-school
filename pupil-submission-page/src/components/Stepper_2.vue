@@ -9,7 +9,7 @@
         Trainieren kann.<br>
         Alle deine Bilder sollten dafür am besten in zwei entsprechend
         benannten Ordnern auf deinem Computer abgespeichert sein.<br>
-        Falls du keine eigenen Bilder hast, kannst du <a href="javascript:void(0)" @click="downloadData"> hier welche
+        Falls du keine eigenen Bilder hast, kannst du <a href="javascript:void(0)" @click="downloadBackupData"> hier welche
           herunterladen</a>.
         <br>
         <br>
@@ -40,7 +40,7 @@
 
 <script lang="ts">
 import UploadImagesForClass from '@/components/UploadImagesForClass.vue'
-import trainingDataPath from '@/assets/training-data.zip';
+import backupDataPath from '@/assets/backup-data.zip';
 
 
 
@@ -51,10 +51,10 @@ export default {
   }),
   components: { UploadImagesForClass },
   methods: {
-    downloadData() {
+    downloadBackupData() {
       const link = document.createElement('a');
-      link.href = trainingDataPath;
-      link.download = 'training-data.zip';
+      link.href = backupDataPath;
+      link.download = 'backup-data.zip';
       link.click();
     }
   },

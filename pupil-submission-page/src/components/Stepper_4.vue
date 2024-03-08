@@ -212,7 +212,7 @@
                         <a href="javascript:void(0)" @click="downloadTestData"> Testdaten</a>
                         <br>
                         <br>
-                        <a href="javascript:void(0)" @click="downloadValidationData">Trainingsdaten</a>
+                        <a href="javascript:void(0)" @click="downloadTrainingData">Trainingsdaten</a>
                     </v-container>
                 </v-expansion-panel-text>
             </v-expansion-panel>
@@ -246,7 +246,7 @@ import car_accident1 from '@/assets/car_accident1.jpg';
 import car_accident2 from '@/assets/car_accident2.jpg';
 import car_accident3 from '@/assets/car_accident3.jpg';
 import car_accident4 from '@/assets/car_accident4.jpg';
-import validationDataPath from '@/assets/validation-data.zip';
+import trainingDataPath from '@/assets/training-data.zip';
 import testDataPath from '@/assets/test-data.zip';
 
 export default {
@@ -328,10 +328,10 @@ export default {
 
             return ret
         },
-        downloadValidationData() {
+        downloadTrainingData() {
             const link = document.createElement('a');
-            link.href = validationDataPath;
-            link.download = 'validation-data.zip';
+            link.href = trainingDataPath;
+            link.download = 'training-data.zip';
             link.click();
         },
         downloadTestData() {
