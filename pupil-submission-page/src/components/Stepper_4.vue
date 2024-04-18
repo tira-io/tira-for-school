@@ -31,7 +31,7 @@
             <v-expansion-panel title="Quantitative Tests">
                 <v-expansion-panel-text>
                     <v-container class="ma-3">
-                        Hier siehst du eine sogenannte <strong>Wahrheitstabelle</strong>.
+                        Hier siehst du eine sogenannte <strong>Wahrheitsmatrix</strong>.
                         Diese zeigt dir an, wie oft deine KI welchen Fehler gemacht hat. <br>
                         Dafür wurden deiner KI in unserem Beispiel 100 Testfälle gegeben, welche sie klassifizieren
                         sollte.
