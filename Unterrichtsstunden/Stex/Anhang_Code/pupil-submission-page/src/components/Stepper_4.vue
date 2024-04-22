@@ -1,0 +1,354 @@
+<template>
+    <v-container>
+        <h2>Erfolgsquote deiner KI bei 100 Beispielbildern:</h2>
+        <br>
+        <v-card class="mx-auto" max-width="1000" min-height="500"
+            @click="show = true; examples_to_show = ['correct-0-predicted-0', 'correct-0-predicted-1', 'correct-1-predicted-0', 'correct-1-predicted-1']"
+            :image="header_image" theme="dark">
+            <v-card-title>
+                <span class="custom-text">Deine KI war in</span>
+            </v-card-title>
+            <v-card-text class="py-0">
+                <v-row align="center" no-gutters>
+                    <v-col class="text-h2" style="color: red;" cols="8">{{ correct }} von {{ image_count }}</v-col>
+                </v-row>
+                <br>
+                <span class="custom-text">Testfällen korrekt.</span>
+            </v-card-text>
+        </v-card>
+        <v-container class="ma-3">
+            Noch ist die KI nicht perfekt, oder würdest du schon in ein selbstfahrendes Auto mit ihr
+            einsteigen?<br>
+            Eine KI wird daher in der Regel mit <strong>qualitativen</strong> und
+            <strong>quantitativen</strong> Tests ausprobiert und kontinuierlich verbessert.
+            <br>
+            Öffne die Tabs unten und schaue, ob du mit diesem Feedback Verbesserungsvorschläge für deine KI
+            findest.
+            <br>
+        </v-container>
+
+        <v-expansion-panels>
+            <v-expansion-panel title="Quantitative Tests">
+                <v-expansion-panel-text>
+                    <v-container class="ma-3">
+                        Hier siehst du eine sogenannte <strong>Wahrheitsmatrix</strong>.
+                        Diese zeigt dir an, wie oft deine KI welchen Fehler gemacht hat. <br>
+                        Dafür wurden deiner KI in unserem Beispiel 100 Testfälle gegeben, welche sie klassifizieren
+                        sollte.
+                        Dabei kann es zu verschiedenen Fehlern kommen.<br>
+                        Wo liegen die Probleme deiner KI?
+                    </v-container>
+                    <v-row>
+                        <v-col cols="2"> </v-col>
+                        <v-col cols="5">
+                            <v-card flat>
+                                <v-card-text align="center">Vorhersage:<br>
+                                    Vorfahrtsstraße</v-card-text>
+                            </v-card>
+                        </v-col>
+                        <v-col cols="5">
+                            <v-card flat>
+                                <v-card-text align="center">Vorhersage: <br>
+                                    Vorfahrt gewähren</v-card-text>
+                            </v-card></v-col>
+                    </v-row>
+                    <v-row>
+                        <v-col cols="2">
+                            <v-card flat>
+                                <v-card-text align="center">Vorfahrtsstraße</v-card-text>
+                            </v-card>
+                        </v-col>
+                        <v-col cols="5">
+                            <v-card flat class="mx-auto"
+                                @click="show = true; examples_to_show = ['correct-0-predicted-0']" style="width: 100%"
+                                image="@/assets/p_true.png" theme="dark">
+                                <v-card-title>
+                                    <span class="custom-text">Deine KI hat </span>
+                                </v-card-title>
+                                <v-card-text class="py-0">
+                                    <v-row align="center" no-gutters>
+                                        <v-col class="text-h2" style="color: green;" cols="8">{{ true_negative_count
+                                            }}</v-col>
+                                    </v-row>
+                                    <br>
+                                    <span class="custom-text">Vorfahrtsstra&szlig;e Schilder korrekt erkannt.</span>
+                                </v-card-text>
+                            </v-card>
+                        </v-col>
+
+                        <v-col cols="5">
+                            <v-card flat class="mx-auto"
+                                @click="show = true; examples_to_show = ['correct-0-predicted-1']" style="width: 100%"
+                                image="@/assets/p_false.png" theme="dark">
+                                <v-card-title>
+                                    <span class="custom-text">Deine KI hat </span>
+                                </v-card-title>
+                                <v-card-text class="py-0">
+                                    <v-row align="center" no-gutters>
+                                        <v-col class="text-h2" style="color: red;" cols="8">{{ false_positive_count
+                                            }}</v-col>
+                                    </v-row>
+                                    <br>
+                                    <span class="custom-text">Vorfahrtsstra&szlig;e Schilder falsch zugeordnet.</span>
+                                </v-card-text>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+
+                    <v-row>
+                        <v-col cols="2">
+                            <v-card flat>
+                                <v-card-text align="center">Vorfahrt gewähren</v-card-text>
+                            </v-card>
+                        </v-col>
+                        <v-col cols="5">
+                            <v-card flat class="mx-auto"
+                                @click="show = true; examples_to_show = ['correct-1-predicted-0']" style="width: 100%"
+                                image="@/assets/y_false.png" theme="dark">
+                                <v-card-title>
+                                    <span class="custom-text">Deine KI hat </span>
+                                </v-card-title>
+                                <v-card-text class="py-0">
+                                    <v-row align="center" no-gutters>
+                                        <v-col class="text-h2" style="color: red;" cols="8">{{ false_negative_count
+                                            }}</v-col>
+                                    </v-row>
+                                    <br>
+                                    <span class="custom-text">"Vorfahrt gew&auml;hren" Schilder falsch
+                                        zugeordnet.</span>
+                                </v-card-text>
+                            </v-card>
+                        </v-col>
+
+                        <v-col cols="5">
+                            <v-card flat class="mx-auto"
+                                @click="show = true; examples_to_show = ['correct-1-predicted-1']" style="width: 100%"
+                                image="@/assets/y_true.png" theme="dark">
+                                <v-card-title>
+                                    <span class="custom-text">Deine KI hat </span>
+                                </v-card-title>
+                                <v-card-text class="py-0">
+                                    <v-row align="center" no-gutters>
+                                        <v-col class="text-h2" style="color: green;" cols="8">{{ true_positive_count
+                                            }}</v-col>
+                                    </v-row>
+                                    <br>
+                                    <span class="custom-text">"Vorfahrt gew&auml;hren" Schilder korrekt erkannt.</span>
+                                </v-card-text>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <v-expansion-panel title="Qualititative Tests">
+                <v-expansion-panel-text>
+                    <v-container class="ma-3">
+                        Hier kannst du deine KI vor besondere Herausforderungen stellen. Lade dafür weitere Testbilder
+                        hoch,
+                        welche nicht Teil der Trainingsdaten sind.
+
+                        Unten kannst du sehen, wie sicher sich die KI bei den Klassifikationen ist.
+                        <br>
+                        Bei welchen Bildern hat deine KI besondere Schwierigkeiten?
+                    </v-container>
+                    <upload-images-for-class class_name='Testbilder' :available_images='test_bilder'
+                        @update="make_some_predictions" />
+
+                    <div v-for="test_bild in test_predictions">
+                        <rendered-prediction :input_image="test_bild.src" :prediction="test_bild.prediction" />
+                    </div>
+                </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <v-expansion-panel title="Der Machine Learning Zyklus">
+                <v-expansion-panel-text>
+
+                    <v-row>
+                        <v-col cols="8">
+                            <v-container class="ma-3">
+                                Wenn du deine KI quantitativ und qualitativ getestet hast, musst
+                                du sie jetzt natürlich verbessern.
+                                Gehe dafür wieder zu Schritt 2 und baue deine Verbesserungsideen
+                                in den Datensatz ein.<br>
+                                Hat deine KI vielleicht ein Problem mit einer bestimmten Klasse?
+
+                                <!-- <br> Schaffst du es in die Top 3 der KI's?-->
+
+                                <br>
+                                <br>
+                                <v-btn color="primary" @click="$emit('change-step', 2)">Zurück zu Schritt 2</v-btn>
+                            </v-container>
+                        </v-col>
+                        <v-col cols="4">
+                            <v-img :width="300" src="@/assets/Zyklus.png" />
+                        </v-col>
+
+
+
+                    </v-row>
+                </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!--
+        <v-expansion-panel title="Deine KI im Vergleich zu anderen">
+            <v-expansion-panel-text>
+                <v-container class="ma-3">
+                    Du kannst hier deine KI mit denen deiner Mitschülerinnen und Mitschülern vergleichen.<br>
+                    Wer hat die beste KI erstellt und was macht diese besser als die anderen?
+                    <br>
+                    <v-data-table :items="items" />
+                </v-container>
+            </v-expansion-panel-text>
+        </v-expansion-panel>
+        -->
+            <v-expansion-panel title="Weitere Trainings- und Testdaten">
+                <v-expansion-panel-text>
+                    <v-container class="ma-3">
+                        Lade hier weitere Bilder zum Trainieren und Testen herunter. <br>
+                        Achte darauf, dass du die Trainings- und Testdaten nie vermischst.
+                        <br>
+                        <br>
+                        <a href="javascript:void(0)" @click="downloadTestData"> Testdaten</a>
+                        <br>
+                        <br>
+                        <a href="javascript:void(0)" @click="downloadTrainingData">Trainingsdaten</a>
+                    </v-container>
+                </v-expansion-panel-text>
+            </v-expansion-panel>
+        </v-expansion-panels>
+    </v-container>
+    <v-dialog v-model="show" width="90%" height="90%">
+        <template v-slot:default="{ isActive }">
+            <v-card width="100%" height="100%">
+                <v-card-text>
+                    <h1>&Uuml;bersicht &uuml;ber die Vorhersagen deiner KI</h1>
+                    <div v-for="f in selected_images">
+                        <rendered-prediction :input_image="f" :prediction="f.prediction" />
+                    </div>
+                </v-card-text>
+
+                <v-card-actions>
+                    <v-btn color="primary" block @click="show = false">Schlie&szlig;en</v-btn>
+                </v-card-actions>
+            </v-card>
+        </template>
+    </v-dialog>
+</template>
+
+<script lang="ts">
+import UploadImagesForClass from '@/components/UploadImagesForClass.vue'
+import RenderedPrediction from '@/components/RenderedPrediction.vue'
+import { model } from '@/training.ts'
+import { label_vorfahrt_strasse, label_vorfahrt_gewaehren } from '@/datasets.ts'
+
+import car_accident1 from '@/assets/car_accident1.jpg';
+import car_accident2 from '@/assets/car_accident2.jpg';
+import car_accident3 from '@/assets/car_accident3.jpg';
+import car_accident4 from '@/assets/car_accident4.jpg';
+import trainingDataPath from '@/assets/training-data.zip';
+import testDataPath from '@/assets/test-data.zip';
+
+export default {
+    components: { UploadImagesForClass, RenderedPrediction },
+    emits: ['change-step'],
+    props: ['model'],
+    data: () => ({
+        items: [
+            { 'Name': "Geheime KI", 'Korrekt': '78 von 100' },
+            { 'Name': "Dagobert Duck", 'Korrekt': '76 von 100' },
+            { 'Name': "Deine KI", 'Korrekt': '75 von 100' },
+            { 'Name': "Maik's KI", 'Korrekt': '56 von 100' },
+            { 'Name': "Luisa's KI", 'Korrekt': '34 von 100' }
+        ],
+        show: false,
+        test_bilder: [],
+        test_predictions: [],
+        examples_to_show: []
+    }),
+    methods: {
+        async make_some_predictions() {
+            this.test_predictions = []
+            for (let i of this.test_bilder) {
+                this.test_predictions.push({
+                    'src': i,
+                    'prediction': await model.predict(i.src)
+                })
+            }
+        }
+    },
+    computed: {
+        header_image() {
+            if (this.image_count - this.correct <= 20) {
+                return car_accident1
+            } else if (this.image_count - this.correct <= 40) {
+                return car_accident2
+            } else if (this.image_count - this.correct <= 60) {
+                return car_accident3
+            } else {
+                return car_accident4
+            }
+        },
+        image_count() {
+            return this.model['categories']['correct-0-predicted-0'].length + this.model['categories']['correct-0-predicted-1'].length +
+                this.model['categories']['correct-1-predicted-0'].length +
+                this.model['categories']['correct-1-predicted-1'].length;
+        },
+        correct() {
+            return this.model['categories']['correct-0-predicted-0'].length + this.model['categories']['correct-1-predicted-1'].length;
+        },
+        true_positive_count() {
+            return this.model['categories']['correct-' + label_vorfahrt_gewaehren + '-predicted-' + label_vorfahrt_gewaehren].length
+        },
+        false_positive_count() {
+            return this.model['categories']['correct-' + label_vorfahrt_strasse + '-predicted-' + label_vorfahrt_gewaehren].length
+        },
+        true_negative_count() {
+            return this.model['categories']['correct-' + label_vorfahrt_strasse + '-predicted-' + label_vorfahrt_strasse].length
+        },
+        false_negative_count() {
+            return this.model['categories']['correct-' + label_vorfahrt_gewaehren + '-predicted-' + label_vorfahrt_strasse].length
+        },
+        selected_images() {
+            let ret = []
+            for (let i of this.examples_to_show) {
+                let examplesAdded = 0
+                for (let j of this.model['categories'][i]) {
+                    ret.push(j)
+                    examplesAdded += 1;
+
+                    if (examplesAdded >= 1 && this.examples_to_show.length > 2) {
+                        break
+                    }
+                    if (examplesAdded > 4) {
+                        break
+                    }
+                }
+            }
+
+            return ret
+        },
+        downloadTrainingData() {
+            const link = document.createElement('a');
+            link.href = trainingDataPath;
+            link.download = 'training-data.zip';
+            link.click();
+        },
+        downloadTestData() {
+            const link = document.createElement('a');
+            link.href = testDataPath;
+            link.download = 'test-data.zip';
+            link.click();
+        },
+    }
+}
+</script>
+
+<style>
+.custom-text {
+    color: black;
+    background-color: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+</style>
